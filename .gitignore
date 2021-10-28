@@ -169,3 +169,6 @@
 /04-blazor/01-wasm-new/obj/01-01.csproj.nuget.g.targets
 /04-blazor/01-wasm-new/obj/project.assets.json
 /04-blazor/01-wasm-new/obj/project.nuget.cache
+/.vs/teacjing-samples/v16/.suo
+/01-csahrp-procedural/02-variables/01-int-variables/obj/Debug/net5.0/01-int-variables.csprojAssemblyReference.cache
+/01-csahrp-procedural/02-variables/02-int-variables overflow/obj/Debug/net5.0/02-int-variables-overflow.csprojAssemblyReference.cache

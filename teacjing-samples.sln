@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-hello-world", "01-csahrp-procedural\01-instuctions\01-hello-world\01-hello-world.csproj", "{2F4DC32E-68D7-4FF9-B12F-24905C179115}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-csahrp-procedural", "01-csahrp-procedural", "{08D43C55-C4F3-4723-8006-DD54186311F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-instuctions", "01-instuctions", "{4640E651-7034-40F3-AAFE-76AC37594643}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-sequence", "01-csahrp-procedural\01-instuctions\02-sequence\02-sequence.csproj", "{09561269-589F-4A08-B119-7DDE6D98FAD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-variables", "02-variables", "{230CDC08-9B04-45BB-96BB-7C527D20D27C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-int-variables", "01-csahrp-procedural\02-variables\01-int-variables\01-int-variables.csproj", "{C4816F0A-0F0F-43ED-A7D6-D141DB1FC52C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-int-variables-overflow", "01-csahrp-procedural\02-variables\02-int-variables overflow\02-int-variables-overflow.csproj", "{1A9F7D60-6300-4D56-8DEE-A7B9298813D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F4DC32E-68D7-4FF9-B12F-24905C179115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4DC32E-68D7-4FF9-B12F-24905C179115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4DC32E-68D7-4FF9-B12F-24905C179115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4DC32E-68D7-4FF9-B12F-24905C179115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09561269-589F-4A08-B119-7DDE6D98FAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09561269-589F-4A08-B119-7DDE6D98FAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09561269-589F-4A08-B119-7DDE6D98FAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09561269-589F-4A08-B119-7DDE6D98FAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4816F0A-0F0F-43ED-A7D6-D141DB1FC52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4816F0A-0F0F-43ED-A7D6-D141DB1FC52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4816F0A-0F0F-43ED-A7D6-D141DB1FC52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4816F0A-0F0F-43ED-A7D6-D141DB1FC52C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9F7D60-6300-4D56-8DEE-A7B9298813D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9F7D60-6300-4D56-8DEE-A7B9298813D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A9F7D60-6300-4D56-8DEE-A7B9298813D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A9F7D60-6300-4D56-8DEE-A7B9298813D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F4DC32E-68D7-4FF9-B12F-24905C179115} = {4640E651-7034-40F3-AAFE-76AC37594643}
+		{4640E651-7034-40F3-AAFE-76AC37594643} = {08D43C55-C4F3-4723-8006-DD54186311F6}
+		{09561269-589F-4A08-B119-7DDE6D98FAD5} = {4640E651-7034-40F3-AAFE-76AC37594643}
+		{230CDC08-9B04-45BB-96BB-7C527D20D27C} = {08D43C55-C4F3-4723-8006-DD54186311F6}
+		{C4816F0A-0F0F-43ED-A7D6-D141DB1FC52C} = {230CDC08-9B04-45BB-96BB-7C527D20D27C}
+		{1A9F7D60-6300-4D56-8DEE-A7B9298813D6} = {230CDC08-9B04-45BB-96BB-7C527D20D27C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C993E4F3-EF6F-4F1F-899A-EAF1958CFE4E}
+	EndGlobalSection
+EndGlobal
