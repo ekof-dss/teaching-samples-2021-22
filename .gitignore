@@ -187,3 +187,8 @@
 /04-blazor-wasm/01-wasm-hello/obj/project.assets.json
 /04-blazor-wasm/01-wasm-hello/obj/project.nuget.cache
 /04-blazor-wasm/01-wasm-hello/obj
+/.vs/teaching-samples/v16/.suo
+/.vs/teaching-samples/DesignTimeBuild/.dtbcache.v2
+/.vs/teaching-samples/config/debuggerConfiguration-880d4043-59bf-4635-ad7a-fb1a15d9f889.json
+/04-blazor-wasm/01-fundametals/01-wasm-hello/obj
+/04-blazor-wasm/01-fundametals/01-wasm-hello/bin/Debug/net5.0
