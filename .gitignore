@@ -181,3 +181,8 @@
 /01-csahrp-procedural/02-variables/03-byte-short-long-variables/obj
 /01-csahrp-procedural/02-variables/03-byte-short-long-variables/bin/Debug/net5.0
 /01-csahrp-procedural/02-variables/03-byte-short-long-variables/.vscode
+/04-blazor-wasm/01-wasm-hello/obj/01-01.csproj.nuget.dgspec.json
+/04-blazor-wasm/01-wasm-hello/obj/01-01.csproj.nuget.g.props
+/04-blazor-wasm/01-wasm-hello/obj/01-01.csproj.nuget.g.targets
+/04-blazor-wasm/01-wasm-hello/obj/project.assets.json
+/04-blazor-wasm/01-wasm-hello/obj/project.nuget.cache
