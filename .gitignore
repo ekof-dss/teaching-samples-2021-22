@@ -193,3 +193,4 @@
 /04-blazor-wasm/01-fundametals/01-wasm-hello/obj
 /04-blazor-wasm/01-fundametals/01-wasm-hello/bin/Debug/net5.0
 /.vs/teacjhng-samples/DesignTimeBuild/.dtbcache.v2
+/04-blazor-wasm/01-fundametals/01-wasm-hello/01-wasm-hello.csproj.user
