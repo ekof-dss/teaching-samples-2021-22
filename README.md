@@ -89,10 +89,10 @@ That VM has the following characetristics:
 
 - It is created with [Oracle VM Virtual Box](https://www.virtualbox.org/){:target = "_blank"}.
 
-- Operating system within the virtual machine is [Linux Ubuntu 20.10](https://ubuntu.com/engage/ubuntu-20.10){:target = "_blank"}.  Instructions for the installation are given [here](https://www.virtualbox.org/wiki/Linux_Downloads){:target = "_blank"} and credentials are as folllows(username: Ubuntu, password: ubuntu).
+- Operating system within the virtual machine is [Linux Ubuntu 20.10](https://ubuntu.com/engage/ubuntu-20.10){:target = "_blank"}.  Instructions for the installation are given [here](https://www.virtualbox.org/wiki/Linux_Downloads){:target = "_blank"} and credentials are as folllows(username: `Ubuntu`, password: `ubuntu`).
 
-- Programming language is C#, and development framework is [Microsoft .NET 5.0](https://devblogs.microsoft.com/dotnet/introducing-net-5/){:target = "_blank"}. Instructions for the installation are given [here](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu){:target = "_blank"}.
+- Programming language is [C#](https://docs.microsoft.com/en-us/dotnet/csharp/){:target = "_blank"}, and development framework is [Microsoft .NET 5.0](https://devblogs.microsoft.com/dotnet/introducing-net-5/){:target = "_blank"}. Instructions for the installation are given [here](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu){:target = "_blank"}.
 
-- Database management system is [Microsoft SQL Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019){:target = "_blank"} for Linux -  Developer Edition. Instructions for the installation are given [here](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15){:target = "_blank"}.
+- Database management system is [Microsoft SQL Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019){:target = "_blank"} for Linux -  Developer Edition. Instructions for the installation are given [here](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15){:target = "_blank"} and credentials are as folllows(username: `sa`, password: `Ubuntu_Sa`).
 
 - Integrated development environment (IDE) used in this course is Visual Studio Code. Instalation of the selceted IDE on the preivously described platform is described [here](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/){:target = "_blank"}. The following VS Code extensions are also installed:
