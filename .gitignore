@@ -199,3 +199,6 @@
 /04-blazor-wasm/01-fundametals/02-simple-calculator/02-simple-calculator.user
 /04-blazor-wasm/01-fundametals/02-simple-caounter/bin
 /04-blazor-wasm/01-fundametals/02-simple-caounter/obj
+/04-blazor-wasm/01-fundametals/03-caounter-inrement-decrement/.vscode
+/04-blazor-wasm/01-fundametals/03-caounter-inrement-decrement/bin
+/04-blazor-wasm/01-fundametals/03-caounter-inrement-decrement/obj
