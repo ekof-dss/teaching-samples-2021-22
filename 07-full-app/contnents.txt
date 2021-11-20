@@ -1,0 +1,1 @@
+domain is full blazor app for movies, actors and directors, which consumes rest api. 
