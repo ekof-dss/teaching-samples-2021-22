@@ -1,0 +1,81 @@
+@page "/simple-math-decimal"
+
+<div class="container-fluid">
+    <h2>Simple Math operations on decimals</h2>
+
+    <p>This is an example of simple mathematical operations. Operations are done with decimal numbers.</p>
+</div>
+<div class="row m-3">
+    <div class="col">
+        First argument:
+    </div>
+    <div class="col">
+        <input type="number" class="form-control" id="arg1" placeholder="Enter value for the first argument" name="arg1"
+            @bind="argument1" @bind:event="oninput">
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col">
+        Second argument:
+    </div>
+    <div class="col">
+        <input type="number" class="form-control" id="arg2" placeholder="Enter value for the second argument" name="arg2"
+            @bind="argument2" @bind:event="oninput">
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col">
+        <button class="btn btn-success btn-block lm-3 rm-3" @onclick="Addition">+</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-success btn-block lm-3 rm-3" @onclick="Subtraction">-</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-success btn-block lm-3 rm-3" @onclick="Multiplication">*</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-success btn-block lm-3 rm-3" @onclick="Division">/</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-success btn-block lm-3 rm-3" @onclick="Modulo">%</button>
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col">
+        Result: <strong> @result </strong>
+    </div>
+</div>
+
+@code {
+    private decimal argument1 = 0;
+
+    private decimal argument2 = 0;
+
+    private decimal result = 0;
+
+    private void Addition()
+    {
+        result = argument1 + argument2;
+    }
+
+    private void Subtraction()
+    {
+        result = argument1 - argument2;
+    }
+
+    private void Multiplication()
+    {
+        result = argument1 * argument2;
+    }
+
+    private void Division()
+    {
+        result = argument1 / argument2;
+    }
+
+    private void Modulo()
+    {
+        result = argument1 % argument2;
+    }
+
+}

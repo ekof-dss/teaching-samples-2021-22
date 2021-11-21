@@ -1,11 +1,14 @@
-@page "/counter"
+@page "/counter-inrement-deccrement"
 
 <div class="container-fluid">
-    <h1>Simple Counter</h1>
+    <h2>Counter with increment/decrement</h2>
 
     <p>This is an example of cointer with decrement and increment.</p>
 </div>
 <div class="row m-3">
+    <div class="col">
+        Step for increment/decrement:
+    </div>
     <div class="col">
         <input type="text" class="form-control" id="increment-value"
             placeholder="Enter value for incremenation/decrementation" name="incdec" @bind="incDecValue"
@@ -25,7 +28,7 @@
 </div>
 <div class="row m-3">
     <div class="col">
-        Current count: @currentCount
+        Current count: <strong> @currentCount </strong>
     </div>
 </div>
 

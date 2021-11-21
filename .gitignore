@@ -880,3 +880,8 @@
 /04-blazor-wasm/01-fundametals/03-counter-inrement-decrement/bin
 /04-blazor-wasm/01-fundametals/02-simple-counter/obj
 /04-blazor-wasm/01-fundametals/02-simple-counter/bin
+/04-blazor-wasm/01-fundametals/04-simple-math/obj/Debug/net5.0/Razor/Shared/SimpleMathDecimal.razor.g.cs
+/04-blazor-wasm/01-fundametals/04-simple-math/obj/Debug/net5.0/Razor/Shared/SimpleMathInt.razor.g.cs
+/04-blazor-wasm/01-fundametals/04-simple-math/obj/Debug/net5.0/RazorDeclaration/Shared/SimpleMathDecimal.razor.g.cs
+/04-blazor-wasm/01-fundametals/04-simple-math/obj/Debug/net5.0/RazorDeclaration/Shared/SimpleMathInt copy.razor.g.cs
+/04-blazor-wasm/01-fundametals/04-simple-math/obj/Debug/net5.0/RazorDeclaration/Shared/SimpleMathInt.razor.g.cs
