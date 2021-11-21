@@ -1,4 +1,4 @@
-@page "/counter-increment-decrement"
+@page "/counter-inrement-deccrement-p"
 
 <div class="container-fluid">
     <h2>Counter with increment/decrement</h2>
@@ -10,8 +10,8 @@
         Step for increment/decrement:
     </div>
     <div class="col">
-        <input type="text" class="form-control" id="increment-value"
-            placeholder="Enter value for incremenation/decrementation" name="incdec" @bind="incDecValue"
+        <input type="number" class="form-control" id="increment-value"
+            placeholder="Enter value for incremenation/decrementation" name="incdec" @bind="IncDecValue"
             @bind:event="oninput">
     </div>
 </div>
@@ -28,31 +28,30 @@
 </div>
 <div class="row m-3">
     <div class="col">
-        Current count: <strong> @currentCount </strong>
+        Current count: <strong> @CurrentCount </strong>
     </div>
 </div>
 
-
-
-
 @code {
-    private int currentCount = 0;
+    [Parameter]
+    public int CurrentCount {get; set;} = 0;
 
-    private int incDecValue = 1;
+    [Parameter]
+    public int IncDecValue {get; set;} = 1;
 
     private void IncrementCount()
     {
-        currentCount += incDecValue;
+        CurrentCount += IncDecValue;
     }
 
     private void DecrementCount()
     {
-        currentCount -= incDecValue;
+        CurrentCount -= IncDecValue;
     }
 
     private void ResetCount()
     {
-        currentCount = 0;
+        CurrentCount = 0;
     }
 
 }
