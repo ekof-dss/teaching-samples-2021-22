@@ -1,0 +1,58 @@
+@page "/counter-inrement-deccrement"
+
+<div class="container-fluid">
+    <h2>Counter with increment/decrement</h2>
+
+    <p>This is an example of cointer with decrement and increment.</p>
+</div>
+<div class="row m-3">
+    <div class="col">
+        Step for increment/decrement:
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" id="increment-value"
+            placeholder="Enter value for incremenation/decrementation" name="incdec" @bind="incDecValue"
+            @bind:event="oninput">
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col">
+        <button class="btn btn-success btn-block lm-3 rm-3" @onclick="IncrementCount">Increment</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-primary btn-block lm-3 rm-3" @onclick="DecrementCount">Deccrement</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-danger btn-block lm-3 rm-3" @onclick="ResetCount">Reset</button>
+    </div>
+</div>
+<div class="row m-3">
+    <div class="col">
+        Current count: <strong> @currentCount </strong>
+    </div>
+</div>
+
+
+
+
+@code {
+    private int currentCount = 0;
+
+    private int incDecValue = 1;
+
+    private void IncrementCount()
+    {
+        currentCount += incDecValue;
+    }
+
+    private void DecrementCount()
+    {
+        currentCount -= incDecValue;
+    }
+
+    private void ResetCount()
+    {
+        currentCount = 0;
+    }
+
+}
