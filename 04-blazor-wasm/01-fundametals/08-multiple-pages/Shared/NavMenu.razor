@@ -1,5 +1,5 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">01-wasm-hello</a>
+    <a class="navbar-brand" href="">08_multiple_pages</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,12 +14,22 @@
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter (+)
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            <NavLink class="nav-link" href="counter-increment-decrement">
+                <span class="oi oi-minus" aria-hidden="true"></span> Counter (+ and -)
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="simple-math-int">
+                <span class="oi oi-pencil" aria-hidden="true"></span> Simple integer math
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="simple-math-decimal">
+                <span class="oi oi-infinity" aria-hidden="true"></span> Simple real math
             </NavLink>
         </li>
     </ul>

@@ -1,4 +1,4 @@
-@page "/counter-inrement-deccrement"
+@page "/counter-increment-decrement"
 
 <div class="container-fluid">
     <h2>Counter with increment/decrement</h2>
@@ -33,13 +33,21 @@
 </div>
 
 
-
-
 @code {
     private int currentCount = 0;
 
     private int incDecValue = 1;
 
+    protected override void OnAfterRender(bool firstRender)
+    {
+        // execute conditionally for loading data, otherwise this will load
+        // every time the page refreshes
+        if (firstRender)
+        {
+            // Do work to load page data and set properties
+            currentCount = 0;
+        }
+    }
     private void IncrementCount()
     {
         currentCount += incDecValue;

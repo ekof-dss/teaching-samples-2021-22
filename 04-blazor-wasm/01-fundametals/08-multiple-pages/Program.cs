@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace _01_wasm_hello
+namespace _08_multiple_pages
 {
     public class Program
     {
