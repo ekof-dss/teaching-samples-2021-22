@@ -875,3 +875,6 @@
 /04-blazor-wasm/01-fundametals/04-simple-math/obj/Debug/net5.0/staticwebassets/04-simple-math.StaticWebAssets.xml
 /04-blazor-wasm/01-fundametals/04-simple-math/obj/project.assets.json
 /04-blazor-wasm/01-fundametals/04-simple-math/obj/project.nuget.cache
+/04-blazor-wasm/01-fundametals/03-counter-inrement-decrement/obj
+/04-blazor-wasm/01-fundametals/03-counter-inrement-decrement/.vscode
+/04-blazor-wasm/01-fundametals/03-counter-inrement-decrement/bin
