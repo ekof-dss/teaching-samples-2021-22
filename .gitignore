@@ -2222,3 +2222,6 @@
 /04-blazor-wasm/01-fundametals/07-consume-service/.vscode
 /04-blazor-wasm/01-fundametals/07-consume-service/bin
 /04-blazor-wasm/01-fundametals/07-consume-service/obj
+/04-blazor-wasm/02-movie-actors/01-actors-new/obj
+/04-blazor-wasm/02-movie-actors/01-actors-new/.vscode
+/04-blazor-wasm/02-movie-actors/01-actors-new/bin
