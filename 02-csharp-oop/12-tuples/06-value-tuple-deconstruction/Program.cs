@@ -14,7 +14,7 @@ namespace RS2.TupleDeconstruction
     {
         static (int, string, string) GetPerson()
         {
-            return (Id: 10, Ime: "Paja", Prezime: "Patak");
+            return (Id: 10, Ime: "Donald", Prezime: "Duck");
         }
 
         static void DisplayTuple((int, string, string) person)

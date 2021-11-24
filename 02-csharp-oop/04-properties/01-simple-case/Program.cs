@@ -1,28 +1,23 @@
 ﻿
 using System;
 
-namespace RS2.SimpleProperty
+namespace DSS.SimpleProperty
 {
     class Program
     {
         static void Main()
         {
-            Poruka p = new Poruka();
-            Console.WriteLine("Sadrzaj poruke posle kreiranja: {0}", p.Sadrzaj);
+            Message p = new Message();
+            Console.WriteLine("Contents of the message after creation: {0}", p.Contents);
 
-            p.Sadrzaj = "Miki Maus";
-            Console.WriteLine("Sadrzaj poruke posle postavljanja: {0}", p.Sadrzaj);
-            Console.Write("Alternativni prikaz sadrzaja poruke: ");
-            p.PrikazNaKonzolu();
+            p.Contents = "Mickey Mouse";
+            Console.WriteLine("Contents of the message after property set: {0}", p.Contents);
+            Console.Write("Alternative display of the message: ");
+            p.WriteToConsole();
         }
 
     }
 }
 
-/* Izlaz dobijen prilikom izvrsavanja programa:
-Sadrzaj poruke posle kreiranja: XXX
-Sadrzaj poruke posle postavljanja: Miki Maus
-Alternativni prikaz sadrzaja poruke: Miki Maus
 
- */
 

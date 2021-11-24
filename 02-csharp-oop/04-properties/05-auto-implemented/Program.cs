@@ -8,7 +8,7 @@ namespace RS2.SimpleProperty
         static void Main()
         {
             Poruka p = new Poruka();
-            p.Sadrzaj = "Miki Maus";
+            p.Sadrzaj = "Mickey Mouse";
             Console.WriteLine("Sadrzaj poruke posle postavljanja: {0}", p.Sadrzaj);
             Console.Write("Alternativni prikaz sadrzaja poruke: ");
             p.PrikazNaKonzolu();
@@ -18,8 +18,8 @@ namespace RS2.SimpleProperty
 }
 
 /* Izlaz dobijen prilikom izvrsavanja programa:
-Sadrzaj poruke posle postavljanja: Miki Maus
-Alternativni prikaz sadrzaja poruke: Miki Maus
+Sadrzaj poruke posle postavljanja: Mickey Mouse
+Alternativni prikaz sadrzaja poruke: Mickey Mouse
 
  */
 

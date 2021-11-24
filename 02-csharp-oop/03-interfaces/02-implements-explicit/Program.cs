@@ -1,25 +1,25 @@
 ﻿namespace RS2.ImplementsExplicit
 {
-    public interface IKontrola
+    public interface IControl
     {
-        void Iscrtaj();
+        void PrintIt();
     }
 
-    public interface IPovrs
+    public interface IArea
     {
-        void Iscrtaj();
+        void Printit();
     }
 
-    public class NekaKlasa : IKontrola, IPovrs
+    public class SomeClass : IControl, IArea
     {
-        void IKontrola.Iscrtaj()
+        void IControl.PrintIt()
         {
-            System.Console.WriteLine("IKontrola.Iscrtaj");
+            System.Console.WriteLine("IControl.PrintIt");
         }
 
-        void IPovrs.Iscrtaj()
+        void IArea.Printit()
         {
-            System.Console.WriteLine("IPovrs.Iscrtaj");
+            System.Console.WriteLine("IArea.PrintIt");
         }
     }
 
@@ -27,12 +27,12 @@
     {
         public static void Main(string[] args)
         {
-            NekaKlasa sample = new NekaKlasa();
-            IKontrola control = sample;
-            IPovrs surface = sample;
+            SomeClass sample = new SomeClass();
+            IControl control = sample;
+            IArea surface = sample;
 
-            control.Iscrtaj();
-            surface.Iscrtaj();
+            control.PrintIt();
+            surface.Printit();
         }
     }
 }

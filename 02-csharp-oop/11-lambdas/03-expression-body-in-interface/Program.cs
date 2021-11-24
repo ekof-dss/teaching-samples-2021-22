@@ -8,7 +8,7 @@ public class Program
 {
     public static void Main()
     {
-        var person = new Osoba("Paja", "Patak");
+        var person = new Osoba("Donald", "Duck");
         Console.WriteLine(person.Name);
 
         var item = new Artikal("Cipele", 19.95m);

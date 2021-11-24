@@ -23,7 +23,7 @@ namespace RS2.GenericDelegate
             Console.WriteLine(sum(10, 20));
 
             Dodaj<string> con = Concat;
-            Console.WriteLine(con(con("Miki", " "), "Maus"));
+            Console.WriteLine(con(con("Mickey", " "), "Mouse"));
         }
 
      }

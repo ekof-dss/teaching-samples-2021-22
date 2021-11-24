@@ -14,7 +14,7 @@ namespace RS2.TupleInMethod
     {
         static Tuple<int, string, string> GetPerson()
         {
-            return Tuple.Create(10, "Paja", "Patak");
+            return Tuple.Create(10, "Donald", "Duck");
         }
 
         static void DisplayTuple(Tuple<int, string, string> person)

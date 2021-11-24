@@ -7,7 +7,7 @@ namespace RS2.PropertyBackingField
     {
         static void Main()
         {
-            Karakter lik = new Karakter(ime:"Paja", "Patak");
+            Karakter lik = new Karakter(ime:"Donald", "Duck");
             Console.WriteLine("lik - ime: {0}", lik.Ime);
             Console.WriteLine("lik - prezime: {0}", lik.Prezime);
             Console.WriteLine("lik - puno ime: {0}", lik.PunoIme);
@@ -36,13 +36,13 @@ namespace RS2.PropertyBackingField
 }
 
 /* Izlaz dobijen prilikom izvrsavanja programa:
-lik - ime: Paja
-lik - prezime: Patak
-lik - puno ime: Paja Patak
+lik - ime: Donald
+lik - prezime: Duck
+lik - puno ime: Donald Duck
 
 lik - ime: Baja
-lik - prezime: Patak
-lik - puno ime: Baja Patak
+lik - prezime: Duck
+lik - puno ime: Baja Duck
 
 lik - ime: Felipe Kaetano Lopez Martinez
 lik - prezime: Gonzales

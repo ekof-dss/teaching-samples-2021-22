@@ -16,10 +16,10 @@ namespace RS2.SimpleTuple
     {
         static void Main()
         {
-            var person = Tuple.Create(1, "Miki", "Maus");
+            var person = Tuple.Create(1, "Mickey", "Mouse");
             Console.WriteLine(person.Item1); // 1
-            Console.WriteLine(person.Item2); // "Miki"
-            Console.WriteLine(person.Item3); // "Maus"
+            Console.WriteLine(person.Item2); // "Mickey"
+            Console.WriteLine(person.Item3); // "Mouse"
 
 
             var numbers = Tuple.Create("One", 2, 3, "Four", 5, "Six", 7, 8);

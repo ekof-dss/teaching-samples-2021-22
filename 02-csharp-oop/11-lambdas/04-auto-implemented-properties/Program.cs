@@ -8,9 +8,9 @@ namespace RS2.AutoImplementedProperties
         static void Main(string[] args)
         {
             Poruka p = new Poruka();
-            p.Sadrzaj = "Miki Maus";
+            p.Sadrzaj = "Mickey Mouse";
             Console.WriteLine(p.Sadrzaj);
-            p.Sadrzaj = "Paja Patak";
+            p.Sadrzaj = "Donald Duck";
             p.PrikazNaKonzolu();
         }
 

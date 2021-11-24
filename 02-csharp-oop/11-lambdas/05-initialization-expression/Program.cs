@@ -14,7 +14,7 @@ namespace RS2.InitializationExpression
             Console.WriteLine("+++");
 
             p.BrojPonavljanja = 3;
-            p.Sadrzaj = "Miki Maus";
+            p.Sadrzaj = "Mickey Mouse";
             p.PrikazNaKonzolu();
             Console.WriteLine("+++");
         }
@@ -26,9 +26,9 @@ namespace RS2.InitializationExpression
         ---
 
         ---
-        Miki Maus
-        Miki Maus
-        Miki Maus
+        Mickey Mouse
+        Mickey Mouse
+        Mickey Mouse
         ---
 
          */

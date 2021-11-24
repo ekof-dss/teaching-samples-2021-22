@@ -43,7 +43,7 @@ namespace RS2.MulticastDelegates
 
             MojDelegat del = del1;
             del += del2;
-            del("Miki Maus");
+            del("Mickey Mouse");
             Console.WriteLine("---");
 
             del -= del1;
@@ -52,16 +52,16 @@ namespace RS2.MulticastDelegates
 
             del -= del2;
             del += del1;
-            del("Patak Daca");
+            del("Duck Daca");
             Console.WriteLine("---");
         }
     }
 }
 
 /* Izlaz dobijen prilikom izvrsavanja programa:
-Pozvan je metod KlasaA.MetodA() sa parametrom: Miki Maus
-MIKI MAUS
-Pozvan je metod KlasaB.MetodB() sa parametrom: Miki Maus
+Pozvan je metod KlasaA.MetodA() sa parametrom: Mickey Mouse
+Mickey Mouse
+Pozvan je metod KlasaB.MetodB() sa parametrom: Mickey Mouse
 M
  i
   k
@@ -88,7 +88,7 @@ D
             k
              o
 
-Pozvan je metod KlasaA.MetodA() sa parametrom: Patak Daca
-PATAK DACA
+Pozvan je metod KlasaA.MetodA() sa parametrom: Duck Daca
+Duck DACA
 
  */
