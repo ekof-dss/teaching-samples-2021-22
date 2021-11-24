@@ -7,28 +7,28 @@ namespace DSS.PropertyBackingField
     {
         static void Main()
         {
-            FictionCharacter lik = new FictionCharacter(firstname:"Donald", "Duck");
-            Console.WriteLine("lik - ime: {0}", lik.FirstName);
-            Console.WriteLine("lik - prezime: {0}", lik.LastName);
-            Console.WriteLine("lik - puno ime: {0}", lik.FullName);
+            FictionCharacter character = new FictionCharacter(firstname:"Donald", "Duck");
+            Console.WriteLine("character - first name: {0}", character.FirstName);
+            Console.WriteLine("character - last name: {0}", character.LastName);
+            Console.WriteLine("character - full name: {0}", character.FullName);
             Console.WriteLine();
 
-            lik.FirstName = "Ronald";
-            Console.WriteLine("lik - ime: {0}", lik.FirstName);
-            Console.WriteLine("lik - prezime: {0}", lik.LastName);
-            Console.WriteLine("lik - puno ime: {0}", lik.FullName);
+            character.FirstName = "Ronald";
+            Console.WriteLine("character - first name: {0}", character.FirstName);
+            Console.WriteLine("character - last name: {0}", character.LastName);
+            Console.WriteLine("character - full name: {0}", character.FullName);
             Console.WriteLine();
 
-            lik.FullName = "Felipe Caetano Lopes Martines Gonsales";
-            Console.WriteLine("lik - ime: {0}", lik.FirstName);
-            Console.WriteLine("lik - prezime: {0}", lik.LastName);
-            Console.WriteLine("lik - puno ime: {0}", lik.FullName);
+            character.FullName = "Felipe Caetano Lopes Martines Gonsales";
+            Console.WriteLine("character - first name: {0}", character.FirstName);
+            Console.WriteLine("character - last name: {0}", character.LastName);
+            Console.WriteLine("character - full name: {0}", character.FullName);
             Console.WriteLine();
 
-            lik.FullName = "Supermen";
-            Console.WriteLine("lik - ime: {0}", lik.FirstName);
-            Console.WriteLine("lik - prezime: {0}", lik.LastName);
-            Console.WriteLine("lik - puno ime: {0}", lik.FullName);
+            character.FullName = "Supermen";
+            Console.WriteLine("character - first name: {0}", character.FirstName);
+            Console.WriteLine("character - last name: {0}", character.LastName);
+            Console.WriteLine("character - full name: {0}", character.FullName);
             Console.WriteLine();
         }
     }
