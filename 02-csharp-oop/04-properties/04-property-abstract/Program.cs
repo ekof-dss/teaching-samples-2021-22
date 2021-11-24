@@ -1,53 +1,53 @@
 ﻿namespace DSS.PropertyAbstract
 {
 
-    abstract class Oblik
+    abstract class Shape
     {
-        public abstract double Povrsina
+        public abstract double Area
         {
             get;
             set;
         }
     }
 
-    class Kvadrat : Oblik
+    class Square : Shape
     {
-        private double ivica;
+        private double side;
 
-        public double Ivica
+        public double Side
         {
-            get { return ivica; }
+            get { return side; }
         }
 
-        public Kvadrat(double a)
+        public Square(double a)
         {
-            ivica = a;
+            side = a;
         }
 
-        public override double Povrsina
+        public override double Area
         {
-            get { return ivica * ivica; }
-            set { ivica = System.Math.Sqrt(value); }
+            get { return side * side; }
+            set { side = System.Math.Sqrt(value); }
         }
     }
 
-    class Kocka : Oblik
+    class Cube : Shape
     {
-        private double ivica;
-        public double Ivica
+        private double side;
+        public double Side
         {
-            get { return ivica; }
+            get { return side; }
         }
 
-        public Kocka(double a)
+        public Cube(double a)
         {
-            ivica = a;
+            side = a;
         }
 
-        public override double Povrsina
+        public override double Area
         {
-            get { return 6 * ivica * ivica; }
-            set { ivica = System.Math.Sqrt(value / 6); }
+            get { return 6 * side * side; }
+            set { side = System.Math.Sqrt(value / 6); }
         }
     }
 
@@ -55,35 +55,27 @@
     {
         static void Main()
         {
-            System.Console.Write("Unesi duzinu ivice: ");
-            double ivica = double.Parse(System.Console.ReadLine());
+            System.Console.Write("Length of the side: ");
+            double side = double.Parse(System.Console.ReadLine());
 
-            Kvadrat kv = new Kvadrat(ivica);
-            Kocka ko = new Kocka(ivica);
+            Square sq = new Square(side);
+            Cube cu = new Cube(side);
 
-            System.Console.WriteLine("Povrsina kvadrata = {0:F2}", kv.Povrsina);
-            System.Console.WriteLine("Povrsina kocke = {0:F2}", ko.Povrsina);
+            System.Console.WriteLine("Area of the square = {0:F2}", sq.Area);
+            System.Console.WriteLine("Area of the cube = {0:F2}", cu.Area);
             System.Console.WriteLine();
 
-            System.Console.Write("Unesi povrsinu: ");
-            double povrsina = double.Parse(System.Console.ReadLine());
+            System.Console.Write("Area of the shape: ");
+            double area = double.Parse(System.Console.ReadLine());
 
-            kv.Povrsina = povrsina;
-            ko.Povrsina = povrsina;
+            sq.Area = area;
+            cu.Area = area;
 
-            System.Console.WriteLine("Ivica kvadrata = {0:F2}", kv.Ivica);
-            System.Console.WriteLine("Ivica kocke = {0:F2}", ko.Ivica);
+            System.Console.WriteLine("Ivica kvadrata = {0:F2}", sq.Side);
+            System.Console.WriteLine("Ivica kocke = {0:F2}", cu.Side);
         }
     }
 }
 
-/* Izlaz dobijen prilikom izvrsavanja programa:
-Unesi duzinu ivice: 4
-Povrsina kvadrata = 16.00
-Povrsina kocke = 96.00
 
-Unesi povrsinu: 64
-Ivica kvadrata = 8.00
-Ivica kocke = 3.27
-*/
 
