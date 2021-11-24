@@ -1,26 +1,26 @@
 ﻿namespace RS2.PropertyHiding
 {
 
-    public class Zaposleni
+    public class Employee
     {
-        private string imePrezime;
+        private string fullName;
 
-        public string ImePrezime
+        public string FullName
         {
-            get { return imePrezime; }
-            set { imePrezime = value; }
+            get { return fullName; }
+            set { fullName = value; }
         }
     }
 
-    public class Direktor : Zaposleni
+    public class Manager : Employee
     {
-        private string imePrezime;
+        private string fullName;
 
         // Notice the use of the new modifier:
-        public new string ImePrezime
+        public new string FullName
         {
-            get { return imePrezime; }
-            set { imePrezime = "direktor " + value; }
+            get { return fullName; }
+            set { fullName = "manager " + value; }
         }
     }
 
@@ -28,23 +28,18 @@
     {
         static void Main()
         {
-            Direktor d1 = new Direktor();
+            Manager d1 = new Manager();
 
             // Derived class property.
-            d1.ImePrezime = "Srećko Šojić";
+            d1.FullName = "proffesor Xavier";
 
             // Base class property.
-            ((Zaposleni)d1).ImePrezime = "Dimitrije Pantić";
+            ((Employee)d1).FullName = "Storm";
 
-            System.Console.WriteLine("Ime u izvedenoj klasi: {0}", d1.ImePrezime);
-            System.Console.WriteLine("Ime u nadklasi: {0}", ((Zaposleni)d1).ImePrezime);
+            System.Console.WriteLine("Full name from derived class: {0}", d1.FullName);
+            System.Console.WriteLine("Full name from superclass: {0}", ((Employee)d1).FullName);
         }
     }
 }
 
-/* Izlaz dobijen prilikom izvrsavanja programa:
-Ime u izvedenoj klasi: direktor Srecko Sojic
-Ime u nadklasi: Dimitrije Pantic
-
-*/
 
