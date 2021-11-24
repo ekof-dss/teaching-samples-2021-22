@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RS2.GenericIndexer
+namespace DSS.GenericIndexer
 {
     class Elementi<T>
     {

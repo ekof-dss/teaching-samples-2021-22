@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS2.BreakfastSync
+namespace DSS.BreakfastSync
 {
     class Program
     {

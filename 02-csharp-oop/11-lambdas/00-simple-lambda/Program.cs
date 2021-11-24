@@ -16,7 +16,7 @@ A lambda expression that has one parameter and returns a value can be converted 
 
 using System;
 
-namespace RS2.SimpleLambda
+namespace DSS.SimpleLambda
 {
 
     public class Program

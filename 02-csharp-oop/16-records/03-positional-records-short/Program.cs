@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.RecordPositional
+namespace DSS.RecordPositional
 {
 
     public record Proizvod

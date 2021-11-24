@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.InitializationExpression
+namespace DSS.InitializationExpression
 {
     public class Program
     {

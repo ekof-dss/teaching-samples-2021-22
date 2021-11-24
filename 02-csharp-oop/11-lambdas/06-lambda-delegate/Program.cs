@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.LambdaDelegate
+namespace DSS.LambdaDelegate
 {
     //declaring a delegate
     public delegate void MyDelegate(string msg);

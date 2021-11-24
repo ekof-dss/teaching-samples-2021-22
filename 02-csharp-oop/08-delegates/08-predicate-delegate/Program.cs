@@ -14,7 +14,7 @@ public delegate bool Predicate<in T>(T obj);
 
 using System;
 
-namespace RS2.PredicateDelegate
+namespace DSS.PredicateDelegate
 {
     class Program
     {

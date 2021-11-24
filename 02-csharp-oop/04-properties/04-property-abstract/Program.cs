@@ -1,4 +1,4 @@
-﻿namespace RS2.PropertyAbstract
+﻿namespace DSS.PropertyAbstract
 {
 
     abstract class Oblik

@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.ConversionEnum
+namespace DSS.ConversionEnum
 {
     enum Boja
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace RS2.SimpleProperty
+namespace DSS.SimpleProperty
 {
     internal class Poruka
     {

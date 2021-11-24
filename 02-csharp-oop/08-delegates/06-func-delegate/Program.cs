@@ -13,7 +13,7 @@ namespace System
 
 using System;
 
-namespace RS2.FuncDelegate
+namespace DSS.FuncDelegate
 {
     class Program
     {

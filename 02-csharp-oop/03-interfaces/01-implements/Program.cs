@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.InterfaceImplementation
+namespace DSS.InterfaceImplementation
 {
     public interface IControl
     {

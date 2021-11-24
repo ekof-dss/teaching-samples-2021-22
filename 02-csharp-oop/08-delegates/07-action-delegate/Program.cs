@@ -11,7 +11,7 @@ public delegate void Action<in T>(T obj);
 
 using System;
 
-namespace RS2.ActionDelegate
+namespace DSS.ActionDelegate
 {
     class Program
     {

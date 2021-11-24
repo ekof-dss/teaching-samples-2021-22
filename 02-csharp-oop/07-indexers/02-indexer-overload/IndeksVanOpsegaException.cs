@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RS2.IndexerOverload
+namespace DSS.IndexerOverload
 {
     public class IndeksVanOpsegaException: Exception
     {

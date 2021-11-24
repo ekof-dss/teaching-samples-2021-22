@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.LambdaExpressionInInterface
+namespace DSS.LambdaExpressionInInterface
 {
 
 public class Program

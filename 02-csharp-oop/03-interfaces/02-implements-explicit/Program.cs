@@ -1,4 +1,4 @@
-﻿namespace RS2.ImplementsExplicit
+﻿namespace DSS.ImplementsExplicit
 {
     public interface IControl
     {

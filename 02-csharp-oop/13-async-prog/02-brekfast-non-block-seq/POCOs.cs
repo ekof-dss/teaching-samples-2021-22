@@ -1,4 +1,4 @@
-﻿namespace RS2.BreakfastNonBlockSeq
+﻿namespace DSS.BreakfastNonBlockSeq
 {
     internal class Slanina
     {

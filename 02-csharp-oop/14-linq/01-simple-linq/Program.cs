@@ -32,7 +32,7 @@ Shaping data: You can retrieve data in different shapes.
 using System;
 using System.Linq;
 
-namespace RS2.SimpleLinq
+namespace DSS.SimpleLinq
 {
     // delegat koji predstavlja uslov
     delegate bool FindStudent(Student std);

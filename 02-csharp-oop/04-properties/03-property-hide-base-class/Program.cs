@@ -1,4 +1,4 @@
-﻿namespace RS2.PropertyHiding
+﻿namespace DSS.PropertyHiding
 {
 
     public class Employee

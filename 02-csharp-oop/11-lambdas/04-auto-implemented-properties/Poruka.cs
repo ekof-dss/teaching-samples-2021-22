@@ -1,6 +1,6 @@
 using System;
 
-namespace RS2.AutoImplementedProperties
+namespace DSS.AutoImplementedProperties
 {
     internal class Poruka
     {

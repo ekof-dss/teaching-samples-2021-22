@@ -13,7 +13,7 @@ data to the handler.
 using System;
 using System.Threading;
 
-namespace RS2.PassEventData
+namespace DSS.PassEventData
 {
     // podaci koji se prosledjuju uz dogadjaj
     public class ProcessEventArgs : EventArgs

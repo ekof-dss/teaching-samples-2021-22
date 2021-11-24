@@ -1,4 +1,4 @@
-namespace RS2.InterfaceEquitable
+namespace DSS.InterfaceEquitable
 {
     public class Car : IEquatable<Car>
     {

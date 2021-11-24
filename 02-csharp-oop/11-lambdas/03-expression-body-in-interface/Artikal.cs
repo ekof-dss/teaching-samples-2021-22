@@ -1,4 +1,4 @@
-namespace RS2.LambdaExpressionInInterface
+namespace DSS.LambdaExpressionInInterface
 {
     public class Artikal
     {

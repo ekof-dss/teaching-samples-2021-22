@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.MulticastDelegates
+namespace DSS.MulticastDelegates
 {
     // deklaracija delegata
     public delegate void MojDelegat(string s);

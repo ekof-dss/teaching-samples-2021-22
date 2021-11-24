@@ -8,7 +8,7 @@ a data structure to hold an object with properties, but you don't want to create
 
 using System;
 
-namespace RS2.TupleDeconstruction
+namespace DSS.TupleDeconstruction
 {
     class Program
     {

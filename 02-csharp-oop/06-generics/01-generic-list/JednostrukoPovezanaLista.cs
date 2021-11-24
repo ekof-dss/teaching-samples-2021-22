@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace RS2.GenericList
+namespace DSS.GenericList
 {
     // parameter tipa T je u uglastim zagradama
     public class JednostrukoPovezanaLista<T>

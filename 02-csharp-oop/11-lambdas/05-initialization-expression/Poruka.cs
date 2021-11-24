@@ -1,6 +1,6 @@
 using System;
 
-namespace RS2.InitializationExpression
+namespace DSS.InitializationExpression
 {
     internal class Poruka
     {

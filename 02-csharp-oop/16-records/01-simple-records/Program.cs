@@ -7,7 +7,7 @@ the whole object immutable you have to set init keyword on each property if you 
 
 using System;
 
-namespace RS2.SimpleRecord
+namespace DSS.SimpleRecord
 {
 
     public record Proizvod

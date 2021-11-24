@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.GenericDelegate
+namespace DSS.GenericDelegate
 {
     public delegate T Dodaj<T>(T param1, T param2); // generic delegate
 

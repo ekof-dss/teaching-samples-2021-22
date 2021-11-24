@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RS2.GenericList
+namespace DSS.GenericList
 {
     public class Program
     {

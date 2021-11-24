@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.LambdaIndexer
+namespace DSS.LambdaIndexer
 {
     class Program
     {

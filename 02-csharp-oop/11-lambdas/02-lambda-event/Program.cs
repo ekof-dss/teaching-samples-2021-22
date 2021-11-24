@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace RS2.LambdaEvent
+namespace DSS.LambdaEvent
 {
     // podaci koji se prosledjuju uz dogadjaj
     public class ProcessEventArgs : EventArgs

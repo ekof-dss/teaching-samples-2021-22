@@ -11,7 +11,7 @@ complex data structure.
 
 using System;
 
-namespace RS2.StructuresEvents
+namespace DSS.StructuresEvents
 {
     public enum Dimension { X, Y };
 

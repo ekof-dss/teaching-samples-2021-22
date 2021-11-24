@@ -12,7 +12,7 @@ Use the EventHandler delegate for all events that do not include event data.
 using System;
 using System.Threading;
 
-namespace RS2.EventHandlerSample
+namespace DSS.EventHandlerSample
 {
     public class BusinessLogic
     {

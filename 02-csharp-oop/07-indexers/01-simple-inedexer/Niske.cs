@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.SimpleIndexer
+namespace DSS.SimpleIndexer
 {
     class Niske
     {

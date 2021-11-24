@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RS2.SimpleGeneric
+namespace DSS.SimpleGeneric
 {
     public class SkladistePodataka<T>
     {

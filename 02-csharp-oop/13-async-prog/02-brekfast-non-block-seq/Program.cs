@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RS2.BreakfastNonBlockSeq
+namespace DSS.BreakfastNonBlockSeq
 {
     class Program
     {

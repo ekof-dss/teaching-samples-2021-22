@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.SimpleDelegate
+namespace DSS.SimpleDelegate
 {
     //deklaracija delegata
     public delegate void MojDelegat(string tekst); 

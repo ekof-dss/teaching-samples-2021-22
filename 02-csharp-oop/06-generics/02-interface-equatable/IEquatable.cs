@@ -1,4 +1,4 @@
-namespace RS2.InterfaceEquitable
+namespace DSS.InterfaceEquitable
 {
     interface IEquatable<T>
     {

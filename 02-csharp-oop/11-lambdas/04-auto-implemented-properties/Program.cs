@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.AutoImplementedProperties
+namespace DSS.AutoImplementedProperties
 {
     public class Program
     {

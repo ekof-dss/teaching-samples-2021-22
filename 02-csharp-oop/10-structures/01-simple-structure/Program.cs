@@ -11,7 +11,7 @@ complex data structure.
 
 using System;
 
-namespace RS2.SimpleStructure
+namespace DSS.SimpleStructure
 {
     struct Coordinate
     {

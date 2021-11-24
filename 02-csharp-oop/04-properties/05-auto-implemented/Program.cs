@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.SimpleProperty
+namespace DSS.SimpleProperty
 {
     class Program
     {

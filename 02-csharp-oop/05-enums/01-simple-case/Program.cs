@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.SimpleEnum
+namespace DSS.SimpleEnum
 {
     public enum Boja
     {

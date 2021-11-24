@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.IndexerOverload
+namespace DSS.IndexerOverload
 {
     class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace RS2.BreakfastSync
+﻿namespace DSS.BreakfastSync
 {
     internal class Slanina
     {

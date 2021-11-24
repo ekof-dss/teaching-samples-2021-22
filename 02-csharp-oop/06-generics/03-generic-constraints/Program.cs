@@ -32,7 +32,7 @@ where T: U	        The type argument supplied for T must be or derive from the a
 using System;
 using System.Collections;
 
-namespace RS2.GenericConstraints
+namespace DSS.GenericConstraints
 {
     class MyClass { }
 

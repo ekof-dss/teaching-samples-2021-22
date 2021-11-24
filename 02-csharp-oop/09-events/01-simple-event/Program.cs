@@ -20,7 +20,7 @@ potpis za rukovaoca dogadjaja kod pretplatnika.
 using System;
 using System.Threading;
 
-namespace RS2.SimpleEvent
+namespace DSS.SimpleEvent
 {
     // delegat preko kog ide komunikacija
     public delegate void Obavesti();  

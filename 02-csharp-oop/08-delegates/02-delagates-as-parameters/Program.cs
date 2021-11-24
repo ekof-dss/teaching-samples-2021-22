@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.DelegatesAsParameters
+namespace DSS.DelegatesAsParameters
 {
     // deklaracija delegata
     public delegate void NoviDelegat(string s);

@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.InterfaceEquitable
+namespace DSS.InterfaceEquitable
 {
     public class Program
     {

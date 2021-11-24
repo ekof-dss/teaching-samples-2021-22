@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace RS2.AnonimousMethod
+namespace DSS.AnonimousMethod
 {
     // deklaracija delegata, koji ocekuje jedan celobrojni argument
     public delegate void Prikazi(int value);

@@ -1,4 +1,4 @@
-﻿namespace RS2.BreakfastTasks
+﻿namespace DSS.BreakfastTasks
 {
     internal class Slanina
     {

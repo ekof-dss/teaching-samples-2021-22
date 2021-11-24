@@ -8,7 +8,7 @@ a data structure to hold an object with properties, but you don't want to create
 
 using System;
 
-namespace RS2.ValueTupleInMethod
+namespace DSS.ValueTupleInMethod
 {
     class Program
     {

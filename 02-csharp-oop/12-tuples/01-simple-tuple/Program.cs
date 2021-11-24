@@ -10,7 +10,7 @@ but you don't want to create a separate type for it.omplex data structure.
 
 using System;
 
-namespace RS2.SimpleTuple
+namespace DSS.SimpleTuple
 {
     class Program
     {
