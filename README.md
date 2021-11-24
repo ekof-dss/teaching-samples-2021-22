@@ -95,4 +95,5 @@ That VM has the following characetristics:
 
 - Database management system is [Microsoft SQL Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019){:target = "_blank"} for Linux -  Developer Edition. Instructions for the installation are given [here](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15){:target = "_blank"} and credentials are as folllows(username: `sa`, password: `Ubuntu_Sa`).
 
-- Integrated development environment (IDE) used in this course is Visual Studio Code. Instalation of the selceted IDE on the preivously described platform is described [here](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/){:target = "_blank"}. The following VS Code extensions are also installed:
+- Integrated development environment (IDE) used in this course is Visual Studio Code. Instalation of the selceted IDE on the preivously described platform is described [here](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/){:target = "_blank"}. The following VS Code extensions are also installed: [Extension C#](https://code.visualstudio.com/docs/languages/csharp){:target = "_blank"} and [SQL Server](https://docs.microsoft.com/en-us/sql/tools/visual-studio-code/sql-server-develop-use-vscode?view=sql-server-ver15){:target = "_blank"}
+
