@@ -7,19 +7,15 @@ namespace DSS.SimpleProperty
     {
         static void Main()
         {
-            Poruka p = new Poruka();
-            p.Sadrzaj = "Mickey Mouse";
-            Console.WriteLine("Sadrzaj poruke posle postavljanja: {0}", p.Sadrzaj);
-            Console.Write("Alternativni prikaz sadrzaja poruke: ");
-            p.PrikazNaKonzolu();
+            Message p = new Message();
+            p.Contents = "Mickey Mouse";
+            Console.WriteLine("Message contents after propery set: {0}", p.Contents);
+            Console.Write("Alternative display of the message contens: ");
+            p.WriteToConsole();
         }
 
     }
 }
 
-/* Izlaz dobijen prilikom izvrsavanja programa:
-Sadrzaj poruke posle postavljanja: Mickey Mouse
-Alternativni prikaz sadrzaja poruke: Mickey Mouse
 
- */
 
