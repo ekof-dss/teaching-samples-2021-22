@@ -1,1 +1,0 @@
-domain is movies, actors and directors

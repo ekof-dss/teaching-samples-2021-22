@@ -1,11 +1,9 @@
 namespace DSS.VanityFair
 {
-    public class Actor
+    public class Person
     {
         public string lastName;
 
         public string firstName;
-
-        public double imdbMark = 0;
     }
 }
