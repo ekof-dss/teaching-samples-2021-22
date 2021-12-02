@@ -3011,3 +3011,7 @@ project/07-for/obj/Debug/net5.0/07-for.genruntimeconfig.cache
 project/07-for/obj/Debug/net5.0/07-for.pdb
 project/07-for/obj/Debug/net5.0/apphost.exe
 project/07-for/obj/Debug/net5.0/ref/07-for.dll
+/03-html-css-bootstrap/bin
+/03-html-css-bootstrap/obj
+/03-html-css-bootstrap/.vscode
+/03-html-css-bootstrap/appsettings.Development.json
