@@ -1,33 +1,34 @@
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+/* Application-wide Styles */
 
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
 }
 
-a, .btn-link {
-    color: #0366d6;
+h2,
+h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+body {
+    margin: 2em;
 }
 
-.content {
-    padding-top: 1.1rem;
+body,
+input[type="text"],
+button {
+    color: #333;
+    font-family: Cambria, Georgia, serif;
 }
 
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
-}
 
-.invalid {
-    outline: 1px solid red;
-}
+/* everywhere else */
 
-.validation-message {
-    color: red;
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #blazor-error-ui {
@@ -42,9 +43,9 @@ a, .btn-link {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
