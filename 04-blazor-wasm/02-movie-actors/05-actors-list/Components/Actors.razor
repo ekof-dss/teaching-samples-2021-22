@@ -11,7 +11,7 @@ else
         @foreach (var a in actors)
         {
             <li>
-                <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName 
+                <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
                 - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
             </li>
         }
@@ -19,13 +19,13 @@ else
 }
 
 <h2>Details for @actor.FirstName @actor.LastName.ToUpper()</h2>
-<br/>
+<br />
 <div><span>id: </span>@actor.Id</div>
 <div><span>first name: </span>@actor.FirstName</div>
 <div><span>last name: </span>@actor.LastName</div>
 <div><span>country: </span>@actor.CountryCode</div>
 <div><span>date of birth: </span> @actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
-<br/>
+<br />
 <div>
     <label> first name: </label>
     <input @bind="actor.FirstName" placeholder="FirstName">
@@ -61,3 +61,64 @@ else
     }
 
 }
+
+<style>
+    /* ActorsComponent's private CSS styles */
+    .heroes {
+        margin: 0 0 2em 0;
+        list-style-type: none;
+        padding: 0;
+        width: 35em;
+    }
+
+    .heroes li {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        background-color: #EEE;
+        margin: .5em;
+        padding: .3em 0;
+        height: 1.6em;
+        border-radius: 4px;
+    }
+
+    .heroes li:hover {
+        color: #2c3a41;
+        background-color: #e6e6e6;
+        left: .1em;
+    }
+
+    .heroes li.selected {
+        background-color: black;
+        color: white;
+    }
+
+    .heroes li.selected:hover {
+        background-color: #505050;
+        color: white;
+    }
+
+    .heroes li.selected:active {
+        background-color: black;
+        color: white;
+    }
+
+    .heroes .badge {
+        display: inline-block;
+        font-size: small;
+        color: white;
+        padding: 0.8em 0.7em 0 0.7em;
+        background-color: #405061;
+        line-height: 1em;
+        position: relative;
+        left: -1px;
+        top: -4px;
+        height: 1.8em;
+        margin-right: .8em;
+        border-radius: 4px 0 0 4px;
+    }
+
+    input {
+        padding: .5rem;
+    }
+</style>
