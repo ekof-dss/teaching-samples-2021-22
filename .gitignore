@@ -3017,3 +3017,5 @@ project/07-for/obj/Debug/net5.0/ref/07-for.dll
 /03-html-css-bootstrap/appsettings.Development.json
 /02-csharp-oop/01-classes/04-movies/bin
 /02-csharp-oop/01-classes/04-movies/obj
+/04-blazor-wasm/02-movie-actors/02-actors-prepare/obj
+/04-blazor-wasm/02-movie-actors/02-actors-prepare/bin
