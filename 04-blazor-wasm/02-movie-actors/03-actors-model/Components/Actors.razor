@@ -1,0 +1,18 @@
+<h2>Details for @actor.FirstName @actor.LastName.ToUpper()</h2>
+<div><span>id: </span>@actor.Id</div>
+<div><span>first name: </span>@actor.FirstName</div>
+<div><span>last name: </span>@actor.LastName</div>
+<div><span>country: </span>@actor.CountryCode</div>
+<div><span>date of birth: </span> @actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+
+@code 
+{
+    Actor actor = new Actor()
+            {
+                Id = 3,
+                FirstName = "Robert",
+                LastName = "De Niro",
+                DateOfBith = new DateTime(1943, 12, 17),
+                CountryCode = "US"
+            };
+}
