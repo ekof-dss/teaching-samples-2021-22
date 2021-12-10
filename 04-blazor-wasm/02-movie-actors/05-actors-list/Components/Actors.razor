@@ -1,0 +1,63 @@
+@inject HttpClient Http
+
+@if (actors == null)
+{
+    <p><em>Loading actors...</em></p>
+}
+else
+{
+    <h2>My favorite actors</h2>
+    <ul class="heroes">
+        @foreach (var a in actors)
+        {
+            <li>
+                <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName 
+                - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
+            </li>
+        }
+    </ul>
+}
+
+<h2>Details for @actor.FirstName @actor.LastName.ToUpper()</h2>
+<br/>
+<div><span>id: </span>@actor.Id</div>
+<div><span>first name: </span>@actor.FirstName</div>
+<div><span>last name: </span>@actor.LastName</div>
+<div><span>country: </span>@actor.CountryCode</div>
+<div><span>date of birth: </span> @actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+<br/>
+<div>
+    <label> first name: </label>
+    <input @bind="actor.FirstName" placeholder="FirstName">
+</div>
+<div>
+    <label> last name: </label>
+    <input @bind="actor.LastName" placeholder="LastName">
+</div>
+<div>
+    <label> country: </label>
+    <input @bind="actor.CountryCode" placeholder="CountryCode">
+</div>
+<div>
+    <label> date of birth: </label>
+    <input @bind="actor.DateOfBith" placeholder="DateOfBith">
+</div>
+@code
+{
+    Actor actor = new Actor()
+    {
+        Id = 3,
+        FirstName = "Robert",
+        LastName = "De Niro",
+        DateOfBith = new DateTime(1943, 12, 17),
+        CountryCode = "US"
+    };
+
+    private Actor[] actors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        actors = await Http.GetFromJsonAsync<Actor[]>("sample-data/actors.json");
+    }
+
+}
