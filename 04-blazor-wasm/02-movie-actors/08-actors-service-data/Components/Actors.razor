@@ -1,4 +1,4 @@
-@inject HttpClient Http
+@inject IActorService service 
 
 @if (actors == null)
 {
@@ -28,7 +28,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        actors = await Http.GetFromJsonAsync<Actor[]>("sample-data/actors.json");
+        actors = await service.GetActors();
     }
 
     private void OnSelect(Actor actor)
