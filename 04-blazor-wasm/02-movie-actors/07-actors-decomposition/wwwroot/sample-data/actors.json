@@ -1,0 +1,36 @@
+[{
+        "Id": 1,
+        "FirstName": "Bata",
+        "LastName": "Zivojinovic",
+        "DateOfBith": "1933-06-05",
+        "CountryCode": "SR"
+    },
+    {
+        "Id": 2,
+        "FirstName": "Julia",
+        "LastName": "Roberts",
+        "DateOfBith": "1967-03-26",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 3,
+        "FirstName": "Robert",
+        "LastName": "De Niro",
+        "DateOfBith": "1943-12-17",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 4,
+        "FirstName": "Al",
+        "LastName": "Pacino",
+        "DateOfBith": "1940-05-25",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 5,
+        "FirstName": "Tom",
+        "LastName": "Cruise",
+        "DateOfBith": "1962-07-03",
+        "CountryCode": "US"
+    }
+]

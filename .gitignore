@@ -3675,3 +3675,6 @@ project/07-for/obj/Debug/net5.0/ref/07-for.dll
 /04-blazor-wasm/02-movie-actors/02-actors-display/obj/project.csproj.nuget.g.props
 /04-blazor-wasm/02-movie-actors/02-actors-display/obj/project.csproj.nuget.g.targets
 /04-blazor-wasm/02-movie-actors/02-actors-display/obj/project.nuget.cache
+/04-blazor-wasm/02-movie-actors/07-actors-decomposition/.vscode
+/04-blazor-wasm/02-movie-actors/07-actors-decomposition/bin
+/04-blazor-wasm/02-movie-actors/07-actors-decomposition/obj
