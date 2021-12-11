@@ -4353,3 +4353,6 @@ project/07-for/obj/Debug/net5.0/ref/07-for.dll
 /04-blazor-wasm/02-movie-actors/13-actors-service-search/.vscode
 /04-blazor-wasm/02-movie-actors/13-actors-service-search/bin
 /04-blazor-wasm/02-movie-actors/13-actors-service-search/obj
+/05-rest/01-actors-new/webapi-service/bin
+/05-rest/01-actors-new/webapi-service/obj
+/05-rest/01-actors-new/webapi-service/appsettings.Development.json
