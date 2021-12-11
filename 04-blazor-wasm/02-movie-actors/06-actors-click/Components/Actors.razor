@@ -10,7 +10,8 @@ else
     <ul class="heroes">
         @foreach (var a in actors)
         {
-            <li @onclick="@(()=>OnSelect(a))">
+            <li @onclick="@(()=>OnSelect(a))" 
+                class="@((a==selectedActor)?"selected":"")" >
                 <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
                 - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
             </li>
