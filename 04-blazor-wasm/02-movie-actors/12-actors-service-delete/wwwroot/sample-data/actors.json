@@ -1,0 +1,92 @@
+[{
+        "Id": 1,
+        "FirstName": "Bata",
+        "LastName": "Zivojinovic",
+        "DateOfBith": "1933-06-05",
+        "CountryCode": "SR"
+    },
+    {
+        "Id": 2,
+        "FirstName": "Julia",
+        "LastName": "Roberts",
+        "DateOfBith": "1967-03-26",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 3,
+        "FirstName": "Robert",
+        "LastName": "De Niro",
+        "DateOfBith": "1943-12-17",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 4,
+        "FirstName": "Al",
+        "LastName": "Pacino",
+        "DateOfBith": "1940-05-25",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 5,
+        "FirstName": "Tom",
+        "LastName": "Cruise",
+        "DateOfBith": "1962-07-03",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 6,
+        "FirstName": "Morgan",
+        "LastName": "Freeman",
+        "DateOfBith": "1937-09-01",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 7,
+        "FirstName": "Robert",
+        "LastName": "Downey Jr.",
+        "DateOfBith": "1965-01-27",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 8,
+        "FirstName": "Brad",
+        "LastName": "Pitt",
+        "DateOfBith": "1963-12-18",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 9,
+        "FirstName": "Tom",
+        "LastName": "Hanks",
+        "DateOfBith": "1956-08-17",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 10,
+        "FirstName": "Jack",
+        "LastName": "Nicholson",
+        "DateOfBith": "1937-04-13",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 11,
+        "FirstName": "Nicole",
+        "LastName": "Kidman",
+        "DateOfBith": "1962-01-08",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 12,
+        "FirstName": "Harrison",
+        "LastName": "Ford",
+        "DateOfBith": "1942-07-13",
+        "CountryCode": "US"
+    },
+    {
+        "Id": 13,
+        "FirstName": "Denzel",
+        "LastName": "Washington",
+        "DateOfBith": "1954-12-29",
+        "CountryCode": "US"
+    }
+]
