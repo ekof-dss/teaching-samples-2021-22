@@ -1,1 +1,0 @@
-domain is rest api for movies, actors and directors
