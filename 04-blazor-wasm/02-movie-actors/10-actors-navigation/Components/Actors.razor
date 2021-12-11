@@ -1,0 +1,42 @@
+@page "/actors"
+
+@inject IActorService _actorService 
+@inject IMessagingService _messagingService
+@inject NavigationManager _navigationManager
+
+@if (actors == null)
+{
+    <p><em>Loading actors...</em></p>
+}
+else
+{
+    <h2>All enlisted actors</h2>
+    <ul class="heroes">
+        @foreach (var a in actors)
+        {
+            <li @onclick="@(()=>OnSelect(a))" >
+                <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
+                - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
+            </li>
+        }
+    </ul>
+}
+@* <ActorDetail SelectedActor=@selectedActor></ActorDetail> *@
+
+@code
+{
+    private Actor[] actors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        actors = await _actorService.GetActors();
+    }
+
+    private async Task OnSelect(Actor actor)
+    {
+        await _messagingService.Add("Actor selected: " + actor.FirstName + " " 
+            + actor.LastName);
+        _navigationManager.NavigateTo("/actordetail/" + actor.Id);
+    }
+
+}
