@@ -1,0 +1,34 @@
+
+@if (@SelectedActor != null)
+{
+    <h2>Details for @SelectedActor.FirstName @SelectedActor.LastName.ToUpper()</h2>
+    <br />
+    <div><span>id: </span>@SelectedActor.Id</div>
+    <div><span>first name: </span>@SelectedActor.FirstName</div>
+    <div><span>last name: </span>@SelectedActor.LastName</div>
+    <div><span>country: </span>@SelectedActor.CountryCode</div>
+    <div><span>date of birth: </span> @SelectedActor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+    <br />
+    <div>
+        <label> first name: </label>
+        <input @bind="SelectedActor.FirstName" placeholder="FirstName">
+    </div>
+    <div>
+        <label> last name: </label>
+        <input @bind="SelectedActor.LastName" placeholder="LastName">
+    </div>
+    <div>
+        <label> country: </label>
+        <input @bind="SelectedActor.CountryCode" placeholder="CountryCode">
+    </div>
+    <div>
+        <label> date of birth: </label>
+        <input @bind="SelectedActor.DateOfBith" placeholder="DateOfBith">
+    </div>
+}
+
+@code
+{
+    [Parameter]
+    public Actor SelectedActor {get; set;}
+}

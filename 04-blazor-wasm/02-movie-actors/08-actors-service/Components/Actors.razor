@@ -1,0 +1,39 @@
+@inject HttpClient Http
+
+@if (actors == null)
+{
+    <p><em>Loading actors...</em></p>
+}
+else
+{
+    <h2>My favorite actors</h2>
+    <ul class="heroes">
+        @foreach (var a in actors)
+        {
+            <li @onclick="@(()=>OnSelect(a))" 
+                class="@((a==selectedActor)?"selected":"")" >
+                <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
+                - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
+            </li>
+        }
+    </ul>
+}
+<ActorDetail SelectedActor=@selectedActor></ActorDetail>
+
+@code
+{
+    Actor selectedActor = null;
+
+    private Actor[] actors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        actors = await Http.GetFromJsonAsync<Actor[]>("sample-data/actors.json");
+    }
+
+    private void OnSelect(Actor actor)
+    {
+        this.selectedActor = actor;
+    }
+
+}
