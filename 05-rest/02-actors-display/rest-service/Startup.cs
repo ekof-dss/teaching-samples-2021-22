@@ -28,6 +28,7 @@ namespace project
         {
 
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "project", Version = "v1" });
@@ -43,6 +44,14 @@ namespace project
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "project v1"));
             }
+
+            app.UseCors(cors =>
+                cors
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed(_ => true)
+                .AllowCredentials()
+            );
 
             app.UseHttpsRedirection();
 

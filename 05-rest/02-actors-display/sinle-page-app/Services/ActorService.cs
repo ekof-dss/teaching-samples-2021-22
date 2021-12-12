@@ -26,9 +26,8 @@ namespace project.Services
         {
             if (_actors == null || reload)
             {
-                Actor[] result = await _httpClient.GetFromJsonAsync<Actor[]>(
-                    "sample-data/actors.json");
-                _actors = result.ToList();
+                _actors = await _httpClient.GetFromJsonAsync<List<Actor>>(
+                    "https://localhost:6001/api/actor");
                 await _messagingService.Add("ActorsService::Actors reloaded");
             }
             else
