@@ -1,8 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using System.Linq;
 
 using project.Models;
@@ -13,7 +13,8 @@ namespace project.Services
     {
         private readonly HttpClient _httpClient;
         private readonly IMessagingService _messagingService;
-        private Actor[] _actors = null;
+
+        private List<Actor> _actors = null;
         public ActorService(HttpClient httpClient, IMessagingService messagingService)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(
@@ -21,21 +22,26 @@ namespace project.Services
             _messagingService = messagingService ?? throw new
                 ArgumentNullException(nameof(messagingService));
         }
-
-        public async Task<Actor[]> GetActors()
+        public async Task<List<Actor>> GetActors(bool reload = false)
         {
-            await _messagingService.Add("ActorsService::Actors fetched");
-            _actors = await _httpClient.GetFromJsonAsync<Actor[]>(
-                "sample-data/actors.json");
+            if (_actors == null || reload)
+            {
+                Actor[] result = await _httpClient.GetFromJsonAsync<Actor[]>(
+                    "sample-data/actors.json");
+                _actors = result.ToList();
+                await _messagingService.Add("ActorsService::Actors reloaded");
+            }
+            else
+            {
+                await _messagingService.Add("ActorsService::Actors already loaded");
+            }
             return _actors;
         }
 
-
-        public Task<Actor[]> Add(string firstName, string lastName,
+        public Task<List<Actor>> Add(string firstName, string lastName,
             string country)
         {
-            List<Actor> actorList = new List<Actor>(_actors);
-            long maxId = actorList.Max(actor => actor.Id) + 1;
+            long maxId = _actors.Max(actor => actor.Id) + 1;
             Actor newActor = new Actor()
             {
                 Id = maxId,
@@ -43,25 +49,25 @@ namespace project.Services
                 LastName = lastName,
                 CountryCode = country
             };
-            actorList.Add(newActor);
-            _actors = actorList.ToArray();
+            _actors.Add(newActor);
             return Task.FromResult(_actors);
         }
 
-        public Task<Actor[]> Delete(Actor actor)
+
+        public Task<List<Actor>> Delete(Actor actor)
         {
-            List<Actor> actorList = new List<Actor>(_actors);
-            actorList.Remove(actor);
-            _actors = actorList.ToArray();
+            _actors.Remove(actor);
             return Task.FromResult(_actors);
         }
 
-        public Actor[] Search(string fn, string ln, string c)
+        public List<Actor> Search(string fn, string ln, string c)
         {
-            return _actors.Where(actor =>
+            List<Actor> result = _actors.Where(actor =>
                 actor.FirstName.ToLower().Contains(fn.ToLower()) ||
                 actor.LastName.ToLower().Contains(ln.ToLower()) ||
-                actor.CountryCode.ToLower().Contains(c.ToLower())).ToArray();
+                actor.CountryCode.ToLower().Contains(c.ToLower()))
+                .ToList<Actor>();
+            return result;
         }
     }
 }
