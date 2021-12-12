@@ -43,7 +43,7 @@ else
 
 @code
 {
-    private Actor[] _actors;
+    private List<Actor> _actors;
 
     private string FirstName { get; set; } = "";
     private string LastName { get; set; } = "";
@@ -51,7 +51,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _actors = await _actorService.GetActors();
+        _actors = await _actorService.GetActors(reload: true);
     }
 
     private async Task OnSelect(Actor actor)

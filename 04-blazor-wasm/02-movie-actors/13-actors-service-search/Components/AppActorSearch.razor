@@ -19,7 +19,12 @@
 </div>
 
 @code{
+
     string search;
+
+    List<Actor> filteredActors = new List<Actor>();
+
+
     string searchBox {
         get{
             return search;
@@ -29,10 +34,8 @@
             filteredActors = Search(value);
         }
     }
-    Actor[] filteredActors = new Actor[0];
-
     
-    private  Actor[] Search(string text)
+    private List<Actor> Search(string text)
     {
         return _actorService.Search(searchBox, searchBox, searchBox);
     }
