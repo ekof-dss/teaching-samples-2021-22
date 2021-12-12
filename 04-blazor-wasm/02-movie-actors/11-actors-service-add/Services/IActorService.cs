@@ -8,7 +8,7 @@ namespace project.Services
 {
     public interface IActorService
     {
-        Task<List<Actor>> GetActors();
+        Task<List<Actor>> GetActors(bool reload = false);
 
         Task<List<Actor>> Add(string firstName, string lastName, string country);
     }
