@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -20,11 +21,12 @@ namespace project.Services
                 ArgumentNullException(nameof(messagingService));
         }
 
-        public async Task<Actor[]> GetActors()
+        public async Task<List<Actor>> GetActors()
         {
             await _messagingService.Add("ActorsService::Actors fetched");
-            return await _httpClient.GetFromJsonAsync<Actor[]>(
+            Actor[] result = await _httpClient.GetFromJsonAsync<Actor[]>(
                 "sample-data/actors.json");;
+            return new List<Actor>(result);
         }
     }
 }

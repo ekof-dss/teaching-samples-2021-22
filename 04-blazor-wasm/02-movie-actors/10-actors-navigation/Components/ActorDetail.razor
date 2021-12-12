@@ -32,15 +32,15 @@
 
 @code
 {
-    public Actor SelectedActor { get; set; }
-
     [Parameter]
     public string Id { get; set; }
 
-    private Actor[] actors;
+    public Actor SelectedActor { get; set; }
+
+    private List<Actor> _actors;
     protected override async Task OnInitializedAsync()
     {
-        actors = await _actorService.GetActors();
-        SelectedActor = actors.First(x => x.Id == long.Parse( Id ) );
+        _actors = await _actorService.GetActors();
+        SelectedActor = _actors.First(x => x.Id == long.Parse( Id ) );
     }
 }
