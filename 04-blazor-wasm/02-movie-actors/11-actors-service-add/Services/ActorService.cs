@@ -23,21 +23,6 @@ namespace project.Services
                 ArgumentNullException(nameof(messagingService));
         }
 
-        public Task<List<Actor>> Add(string firstName, string lastName,
-            string country)
-        {
-            long maxId = _actors.Max(actor => actor.Id) + 1;
-            Actor newActor = new Actor()
-            {
-                Id = maxId,
-                FirstName = firstName,
-                LastName = lastName,
-                CountryCode = country
-            };
-            _actors.Add(newActor);
-            return Task.FromResult(_actors);
-        }
-
         public async Task<List<Actor>> GetActors(bool reload = false)
         {
             if (_actors == null || reload)
@@ -53,5 +38,21 @@ namespace project.Services
             }
             return _actors;
         }
+
+        public Task<List<Actor>> Add(string firstName, string lastName,
+            string country)
+        {
+            long maxId = _actors.Max(actor => actor.Id) + 1;
+            Actor newActor = new Actor()
+            {
+                Id = maxId,
+                FirstName = firstName,
+                LastName = lastName,
+                CountryCode = country
+            };
+            _actors.Add(newActor);
+            return Task.FromResult(_actors);
+        }
+
     }
 }

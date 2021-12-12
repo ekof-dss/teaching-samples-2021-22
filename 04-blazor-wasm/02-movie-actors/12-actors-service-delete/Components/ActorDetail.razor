@@ -37,7 +37,7 @@
     [Parameter]
     public string Id { get; set; }
 
-    private Actor[] actors;
+    private List<Actor> actors;
     protected override async Task OnInitializedAsync()
     {
         actors = await _actorService.GetActors();
