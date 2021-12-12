@@ -1,0 +1,41 @@
+@page "/dashboard"
+
+@inject IActorService _actorService
+@inject IMessagingService _messagingService
+@inject NavigationManager _navigationManager
+
+@if(actors!=null)
+{
+    <h2>Top Actors</h2>
+    <div class="grid grid-pad">
+    @foreach (var actor in actors)
+    {
+        <a class="col-1-4">
+            <div class="module hero" @onclick="@(()=>NavigateTo(actor))">
+                <h4>@actor.FirstName @actor.LastName.ToUpper()</h4>
+            </div>
+        </a>
+    }
+    </div>
+}
+<AppActorSearch></AppActorSearch>
+
+@code{
+    private Actor[] actors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        actors = await GetTopActors();
+    }
+
+    private async Task<Actor[]> GetTopActors()
+    {
+        var actors = await _actorService.GetActors();
+        return actors.Take(4).ToArray();
+    }
+
+    private void NavigateTo(Actor actor)
+    {
+        _navigationManager.NavigateTo("/actordetail/" + @actor.Id);
+    }
+}

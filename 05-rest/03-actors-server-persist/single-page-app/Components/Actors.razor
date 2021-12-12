@@ -1,0 +1,74 @@
+@page "/actors"
+
+@inject IActorService _actorService
+@inject IMessagingService _messagingService
+@inject NavigationManager _navigationManager
+
+@if (_actors == null)
+{
+    <p><em>Loading actors...</em></p>
+}
+else
+{
+    <h2>All enlisted actors</h2>
+
+    <div>
+        <label>First name:
+            <input @bind="FirstName" />
+        </label>
+        <label>Last name:
+            <input @bind="LastName" />
+        </label>
+        <label>Country:
+            <input @bind="Country" />
+        </label>
+        <button @onclick="Add">
+            add</button>
+    </div>
+
+    <ul class="heroes">
+        @foreach (var a in _actors)
+        {
+            <li>
+                <span @onclick="@(()=>OnSelect(a))">
+                    <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
+                    - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
+                </span>
+                <button class="delete" @onclick="@(()=>Delete(a))">x</button>
+            </li>
+        }
+    </ul>
+}
+@* <ActorDetail SelectedActor=@selectedActor></ActorDetail> *@
+
+@code
+{
+    private List<Actor> _actors;
+
+    private string FirstName { get; set; } = "";
+    private string LastName { get; set; } = "";
+    private string Country { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _actors = await _actorService.GetActors(reload: true);
+    }
+
+    private async Task OnSelect(Actor actor)
+    {
+        await _messagingService.Add("Actor selected: " + actor.FirstName + " "
+        + actor.LastName);
+        _navigationManager.NavigateTo("/actordetail/" + actor.Id);
+    }
+
+    private async Task Add()
+    {
+        _actors = await _actorService.Add(FirstName, LastName, Country);
+    }
+
+    private async Task Delete(Actor actor)
+    {
+        _actors = await _actorService.Delete(actor);
+    }
+
+}
