@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using project.Models;
@@ -7,8 +8,8 @@ namespace project.Services
 {
     public interface IActorService
     {
-        Task<Actor[]> GetActors();
+        Task<List<Actor>> GetActors();
 
-        Task<Actor[]> Add(string firstName, string lastName, string country);
+        Task<List<Actor>> Add(string firstName, string lastName, string country);
     }
 }
