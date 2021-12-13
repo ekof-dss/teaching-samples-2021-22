@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+using project.Data;
+
 namespace project
 {
     public class Startup
@@ -33,6 +35,8 @@ namespace project
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "project", Version = "v1" });
             });
+
+            services.AddSingleton<IActorRepository, ActorRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

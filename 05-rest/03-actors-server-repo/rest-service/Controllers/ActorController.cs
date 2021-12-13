@@ -16,28 +16,27 @@ namespace project.Controllers
     [Route("api/[controller]")]
     public class ActorController : ControllerBase
     {
+        private readonly IActorRepository _actorRepo;
         private readonly ILogger<ActorController> _logger;
 
-        public ActorController(ILogger<ActorController> logger)
+        public ActorController(IActorRepository actorRepo, ILogger<ActorController> logger)
         {
-            _logger = logger?? throw new ArgumentNullException(nameof(logger));
+            _actorRepo = actorRepo?? throw new ArgumentNullException(nameof(actorRepo));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpGet]
-        public IEnumerable<ActorDTO> Get()
+        public async Task<IEnumerable<ActorDTO>> GetAll()
         {
-            var rng = new Random();
-            List<Actor> actors = ActorRepository.List( CountryRepostory.List() );
-            int skip = rng.Next(0, actors.Count/2);
-            int take = rng.Next(0, actors.Count);
-            return actors.Skip(skip).Take(take).Select(a => 
-            new ActorDTO(
-                a.Id,
-                a.FirstName,
-                a.LastName,
-                a.Country.Code,
-                a.DateOfBirth
-            )).ToList();
+            List<Actor> actors = await _actorRepo.GetAll();
+            return actors.Select(a =>
+                new ActorDTO(
+                    a.Id,
+                    a.FirstName,
+                    a.LastName,
+                    a.Country.Code,
+                    a.DateOfBirth
+                )).ToList();
         }
     }
 }
