@@ -5797,3 +5797,9 @@ project/07-for/obj/Debug/net5.0/ref/07-for.dll
 /05-rest/02-actors-server/single-page-app/.vscode
 /05-rest/02-actors-server/single-page-app/bin
 /05-rest/02-actors-server/single-page-app/obj
+/05-rest/04-actors-server-save/rest-service/bin
+/05-rest/04-actors-server-save/rest-service/obj
+/05-rest/04-actors-server-save/rest-service/appsettings.Development.json
+/05-rest/04-actors-server-save/single-page-app/.vscode
+/05-rest/04-actors-server-save/single-page-app/bin
+/05-rest/04-actors-server-save/single-page-app/obj

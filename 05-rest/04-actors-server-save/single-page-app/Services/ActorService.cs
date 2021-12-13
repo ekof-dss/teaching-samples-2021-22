@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using System.Linq;
+
+using project.Models;
+
+namespace project.Services
+{
+    public class ActorService : IActorService
+    {
+        private readonly HttpClient _httpClient;
+        private readonly IMessagingService _messagingService;
+
+        private List<Actor> _actors = null;
+        public ActorService(HttpClient httpClient, IMessagingService messagingService)
+        {
+            _httpClient = httpClient ?? throw new ArgumentNullException(
+                nameof(httpClient));
+            _messagingService = messagingService ?? throw new
+                ArgumentNullException(nameof(messagingService));
+        }
+        public async Task<List<Actor>> GetActors(bool reload = false)
+        {
+            if (_actors == null || reload)
+            {
+                _actors = await _httpClient.GetFromJsonAsync<List<Actor>>(
+                    "https://localhost:6001/api/actor");
+                await _messagingService.Add("ActorsService::Actors reloaded");
+            }
+            else
+            {
+                await _messagingService.Add("ActorsService::Actors already loaded");
+            }
+            return _actors;
+        }
+
+        public Task<List<Actor>> Add(string firstName, string lastName,
+            string country)
+        {
+            long maxId = _actors.Max(actor => actor.Id) + 1;
+            Actor newActor = new Actor()
+            {
+                Id = maxId,
+                FirstName = firstName,
+                LastName = lastName,
+                CountryCode = country
+            };
+            _actors.Add(newActor);
+            return Task.FromResult(_actors);
+        }
+
+
+        public Task<List<Actor>> Delete(Actor actor)
+        {
+            _actors.Remove(actor);
+            return Task.FromResult(_actors);
+        }
+
+        public List<Actor> Search(string fn, string ln, string c)
+        {
+            List<Actor> result = _actors.Where(actor =>
+                actor.FirstName.ToLower().Contains(fn.ToLower()) ||
+                actor.LastName.ToLower().Contains(ln.ToLower()) ||
+                actor.CountryCode.ToLower().Contains(c.ToLower()))
+                .ToList<Actor>();
+            return result;
+        }
+    }
+}
