@@ -24,19 +24,20 @@ namespace project.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<ActorDTO> Get()
+        public IEnumerable<ActorDTO> GetRandomSlice()
         {
+            List<Country> countries = CountryData.ListAll();
+            List<Actor> actors = ActorData.ListAll( countries );
             var rng = new Random();
-            List<Actor> actors = ActorRepository.List( CountryRepostory.List() );
             int skip = rng.Next(0, actors.Count/2);
             int take = rng.Next(0, actors.Count);
             return actors.Skip(skip).Take(take).Select(a => 
-            new ActorDTO(
-                a.Id,
-                a.FirstName,
-                a.LastName,
-                a.Country.Code,
-                a.DateOfBirth
+                new ActorDTO(
+                    a.Id,
+                    a.FirstName,
+                    a.LastName,
+                    a.Country.Code,
+                    a.DateOfBirth
             )).ToList();
         }
     }

@@ -5,10 +5,10 @@ using project.Models;
 
 namespace project.Data
 {
-    public class ActorRepository
+    public class ActorData
     {
 
-        public static List<Actor> List(List<Country> countries)
+        public static List<Actor> ListAll(List<Country> countries)
         {
             List<Actor> actors = new List<Actor>();
             actors.Add(new Actor()
