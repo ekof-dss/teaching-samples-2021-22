@@ -36,6 +36,7 @@ namespace project
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "project", Version = "v1" });
             });
 
+            services.AddSingleton<ICountryRepository, CountryRepository>();
             services.AddSingleton<IActorRepository, ActorRepository>();
         }
 
