@@ -38,5 +38,33 @@ namespace project.Controllers
                     a.DateOfBirth
                 )).ToList();
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var user = await _actorRepo.GetById(id);
+            return Ok(user);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(ActorCreateDTO model)
+        {
+            await _actorRepo.Create(model);
+            return Ok(new { message = "User created" });
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(ActorUpdateDTO model)
+        {
+            await _actorRepo.Update(model);
+            return Ok(new { message = "User updated" });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _actorRepo.Delete(id);
+            return Ok(new { message = "User deleted" });
+        }
     }
 }

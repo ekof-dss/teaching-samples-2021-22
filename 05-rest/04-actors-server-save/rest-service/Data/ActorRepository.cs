@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+
 using project.Models;
+using project.ViewModels;
 
 namespace project.Data
 {
@@ -225,5 +228,50 @@ namespace project.Data
         {
             return await Task.FromResult(_data);
         }
+
+        public async Task<Actor> GetById(int id)
+        {
+            return await Task.FromResult(_data.FirstOrDefault(x => x.Id == id));
+        }
+
+        public async Task<Actor> Create(ActorCreateDTO actor)
+        {
+            Actor newActor = new Actor()
+            {
+                Id = _data.Max(x => x.Id) + 1,
+                FirstName = actor.FirstName,
+                LastName = actor.LastName,
+                DateOfBirth = actor.DateOfBirth,
+                Country = new Country()
+                {
+                    Id = actor.CountryId,
+                    Name = actor.CountryName,
+                    Code = actor.CountryCode
+                }
+            };
+            _data.Add(newActor);
+            return await Task.FromResult(newActor);
+        }
+
+        public Task<Actor> Update(ActorUpdateDTO actor)
+        {
+            Actor actorToUpdate = _data.FirstOrDefault(x => x.Id == actor.Id);
+            actorToUpdate.FirstName = actor.FirstName;
+            actorToUpdate.LastName = actor.LastName;
+            actorToUpdate.DateOfBirth = actor.DateOfBirth;
+            actorToUpdate.Country = new Country()
+            {
+                Id = actor.CountryId,
+                Name = actor.CountryName,
+                Code = actor.CountryCode
+            };
+            return Task.FromResult(actorToUpdate);
+        }
+        public Task Delete(int id)
+        {
+            _data.RemoveAll(x => x.Id == id);
+            return Task.CompletedTask;
+        }
+
     }
 }
