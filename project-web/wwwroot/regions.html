@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+    <head>
+        <title>Making regions using tables</title>
+    </head>
+    <body>
+        <table style="width: 100%;">
+            <!-- thead is not necessary -->
+            <tbody>
+                <tr style="background-color: aqua; height: 100px;">
+                    <td colspan="2">THIS IS BANNER</td>
+                </tr>
+                <tr>
+                    <td style="width: 200px; background-color: red; 
+                    color: white;">
+                        THIS IS MENU
+                        <ul>
+                            <li><a href="#">link1</a></li>
+                            <li><a href="#">link2</a></li>
+                            <li><a href="#">link3</a></li>
+                            <li><a href="#">link4</a></li>
+                        </ul>
+                    </td>
+                    <td rowspan="2" style="background-color: yellow;">
+                        MAIN CONTENT
+                        <p>
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, 
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: brown;"> 
+                            This is for useful links<br>
+                            ...
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color: thistle;">
+                        FOOTER
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
