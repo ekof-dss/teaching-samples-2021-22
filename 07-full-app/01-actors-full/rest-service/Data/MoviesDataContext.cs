@@ -51,11 +51,13 @@ namespace project.Data
                 entity.Property(e => e.FirstName)
                     .HasMaxLength(255)
                     .IsRequired();
+                entity.Property(e => e.DateOfBirth)
+                    .HasColumnName("BirthDate");
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.Actors)
                     .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.Restrict)
-                    .HasConstraintName("FK_Actor_Counrty");
+                    .HasConstraintName("FK_Actor_Country");
             });
             modelBuilder.Entity<Actor>().ToTable("Actor");
         }

@@ -21,7 +21,7 @@ namespace project.Data
 
         public async Task<List<Actor>> GetAll()
         {
-            return await _context.Actors.ToListAsync();
+            return await _context.Actors.Include(x => x.Country).ToListAsync();
         }
 
         public async Task<Actor> GetById(int id)
