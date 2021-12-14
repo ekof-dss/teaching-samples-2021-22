@@ -14,6 +14,8 @@ namespace project.Services
 
         Task<List<Actor>> Delete(Actor actor);
 
+        Task<List<Actor>> Update(Actor actor);
+
         List<Actor> Search(string fn, string ln, string c);
     }
 }

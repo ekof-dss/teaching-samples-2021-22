@@ -22,8 +22,7 @@ else
         <label>Country:
             <input @bind="Country" />
         </label>
-        <button @onclick="Add">
-            add</button>
+        <button @onclick="Add"> Add</button>
     </div>
 
     <ul class="heroes">
@@ -64,11 +63,15 @@ else
     private async Task Add()
     {
         _actors = await _actorService.Add(FirstName, LastName, Country);
+        await _messagingService.Add("Actor added: " + FirstName + " "
+        + LastName);
     }
 
     private async Task Delete(Actor actor)
     {
         _actors = await _actorService.Delete(actor);
+        await _messagingService.Add("Actor deleted: " + actor.FirstName + " "
+        + actor.LastName);
     }
 
 }
