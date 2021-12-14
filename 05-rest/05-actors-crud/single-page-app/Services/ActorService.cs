@@ -12,7 +12,7 @@ namespace project.Services
 {
     public class ActorService : IActorService
     {
-        private const string RequestUri = "https://localhost:6001/api/actor";
+        private const string _requestUri = "https://localhost:6001/api/actor";
         private readonly HttpClient _httpClient;
         private readonly IMessagingService _messagingService;
 
@@ -30,7 +30,7 @@ namespace project.Services
             {
                 // sending request for reading to the server
                 _actors = await _httpClient.GetFromJsonAsync<List<Actor>>(
-                    RequestUri);
+                    _requestUri);
                 await _messagingService.Add("ActorsService::Sent request for read");
             }
             else
@@ -62,7 +62,7 @@ namespace project.Services
                 CountryName = newActor.CountryCode,
                 CountryId = 1
             };
-            var response = await _httpClient.PostAsJsonAsync(RequestUri, newActor);
+            var response = await _httpClient.PostAsJsonAsync(_requestUri, newActor);
             await _messagingService.Add(response.IsSuccessStatusCode ?
                 "ActorsService::Sent request for delete" :
                 "ActorsService::Error while deleting");
@@ -74,7 +74,7 @@ namespace project.Services
         {
             _actors.Remove(actor);
             // sending request for deleting to the server
-            var response = await _httpClient.DeleteAsync(RequestUri + "/"
+            var response = await _httpClient.DeleteAsync(_requestUri + "/"
                 + actor.Id);
             await _messagingService.Add(response.IsSuccessStatusCode ?
                 "ActorsService::Sent request for delete" :
@@ -99,13 +99,11 @@ namespace project.Services
                 CountryId = 1
             };
             var response = await _httpClient.PutAsJsonAsync<ActorUpdateDTO>(
-                RequestUri, actorUpd);
+                _requestUri + "/" + actor.Id, actorUpd);
             await _messagingService.Add(response.IsSuccessStatusCode ?
                 "ActorsService::Sent request for update" :
                 "ActorsService::Error while updating");
-            await _messagingService.Add(response.StatusCode.ToString());
-            await _messagingService.Add(response.ReasonPhrase.ToString());
-            // return result          
+             // return result          
             return _actors;
         }
 

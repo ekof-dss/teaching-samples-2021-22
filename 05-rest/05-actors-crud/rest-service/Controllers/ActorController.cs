@@ -32,8 +32,8 @@ namespace project.Controllers
             return actors.Select(a =>
                 new ActorDTO(
                     a.Id,
-                    a.FirstName,
                     a.LastName,
+                    a.FirstName,
                     a.Country.Code,
                     a.DateOfBirth
                 )).ToList();
