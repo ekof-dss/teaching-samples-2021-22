@@ -1,0 +1,73 @@
+@page "/actordetail/{Id}"
+
+@inject IActorService _actorService
+@inject IMessagingService _messagingService
+
+@if (@SelectedActor != null)
+{
+    @if (@currentMode == @Mode.View)
+    {
+        <h2>Details for @SelectedActor.FirstName @SelectedActor.LastName.ToUpper()</h2>
+        <br />
+        <div><span>id: </span>@SelectedActor.Id</div>
+        <div><span>first name: </span>@SelectedActor.FirstName</div>
+        <div><span>last name: </span>@SelectedActor.LastName</div>
+        <div><span>country: </span>@SelectedActor.CountryCode</div>
+        <div><span>date of birth: </span> @SelectedActor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+        <button class="clear" @onclick="Edit"> Edit</button>
+    }
+    @if (@currentMode == @Mode.Edit)
+    {
+        <h2>Edit data for @SelectedActor.FirstName @SelectedActor.LastName.ToUpper()</h2>
+        <div>
+            <label> first name: </label>
+            <input @bind="SelectedActor.FirstName" placeholder="FirstName">
+        </div>
+        <div>
+            <label> last name: </label>
+            <input @bind="SelectedActor.LastName" placeholder="LastName">
+        </div>
+        <div>
+            <label> country: </label>
+            <input @bind="SelectedActor.CountryCode" placeholder="CountryCode">
+        </div>
+        <div>
+            <label> date of birth: </label>
+            <input @bind="SelectedActor.DateOfBith" placeholder="DateOfBith">
+        </div>
+        <button class="clear" @onclick="Save"> Save</button>
+    }
+}
+
+@code
+{
+    enum Mode { View, Edit };
+
+    Mode currentMode = Mode.View;
+    public Actor SelectedActor { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+
+    private List<Actor> actors;
+    protected override async Task OnInitializedAsync()
+    {
+        actors = await _actorService.GetActors();
+        SelectedActor = actors.First(x => x.Id == long.Parse(Id));
+    }
+
+    private async Task Edit()
+    {
+        currentMode = Mode.Edit;
+        await _messagingService.Add("Actor edited: " + SelectedActor.FirstName + " "
+        + SelectedActor.LastName);
+    }
+
+    private async Task Save()
+    {
+        currentMode = Mode.View;
+        await _actorService.Update(SelectedActor);
+        await _messagingService.Add("Actor saved: " + SelectedActor.FirstName + " "
+        + SelectedActor.LastName);
+    }
+}

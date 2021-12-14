@@ -5809,3 +5809,9 @@ project/07-for/obj/Debug/net5.0/ref/07-for.dll
 /05-rest/05-actors-crud/single-page-app/.vscode
 /05-rest/05-actors-crud/single-page-app/bin
 /05-rest/05-actors-crud/single-page-app/obj
+/07-full-app/01-actors-full/rest-service/bin
+/07-full-app/01-actors-full/rest-service/obj
+/07-full-app/01-actors-full/rest-service/appsettings.Development.json
+/07-full-app/01-actors-full/single-page-app/.vscode
+/07-full-app/01-actors-full/single-page-app/bin
+/07-full-app/01-actors-full/single-page-app/obj
