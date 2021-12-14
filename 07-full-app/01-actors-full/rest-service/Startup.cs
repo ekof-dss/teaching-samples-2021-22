@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 using project.Data;
 
@@ -36,8 +37,15 @@ namespace project
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "project", Version = "v1" });
             });
 
-            services.AddSingleton<ICountryRepository, CountryRepository>();
-            services.AddSingleton<IActorRepository, ActorRepository>();
+            services.AddDbContext<MoviesDataContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("MoviesDatabase"));
+            });
+
+            services.AddScoped<ICountryRepository>(sp => new CountryRepository(
+                sp.GetService<MoviesDataContext>()));
+            services.AddScoped<IActorRepository>(sp => new ActorRepository(
+                sp.GetService<MoviesDataContext>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

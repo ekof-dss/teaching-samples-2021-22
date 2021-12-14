@@ -13,11 +13,11 @@ namespace project.Data
 
         public Task<Actor> GetById(int id);
 
-        public Task<Actor> Create(ActorCreateDTO actor);
+        public Task<int> Create(ActorCreateDTO actor);
 
-        public Task<Actor> Update(ActorUpdateDTO actor);
+        public Task<int> Update(ActorUpdateDTO actor);
 
-        public Task Delete(int id);
+        public Task<int> Delete(int id);
 
     }
 }

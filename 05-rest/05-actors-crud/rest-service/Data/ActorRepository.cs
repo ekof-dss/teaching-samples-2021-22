@@ -234,7 +234,7 @@ namespace project.Data
             return await Task.FromResult(_data.FirstOrDefault(x => x.Id == id));
         }
 
-        public async Task<Actor> Create(ActorCreateDTO actor)
+        public async Task<int> Create(ActorCreateDTO actor)
         {
             Actor newActor = new Actor()
             {
@@ -250,10 +250,10 @@ namespace project.Data
                 }
             };
             _data.Add(newActor);
-            return await Task.FromResult(newActor);
+            return await Task.FromResult(0);
         }
 
-        public Task<Actor> Update(ActorUpdateDTO actor)
+        public Task<int> Update(ActorUpdateDTO actor)
         {
             Actor actorToUpdate = _data.FirstOrDefault(x => x.Id == actor.Id);
             actorToUpdate.FirstName = actor.FirstName;
@@ -265,12 +265,12 @@ namespace project.Data
                 Name = actor.CountryName,
                 Code = actor.CountryCode
             };
-            return Task.FromResult(actorToUpdate);
+            return Task.FromResult(0);
         }
-        public Task Delete(int id)
+        public Task<int> Delete(int id)
         {
             _data.RemoveAll(x => x.Id == id);
-            return Task.CompletedTask;
+            return Task.FromResult(0);
         }
 
     }

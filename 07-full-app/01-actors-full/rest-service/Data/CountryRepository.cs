@@ -1,47 +1,26 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 using project.Models;
 
 namespace project.Data
 {
     public class CountryRepository : ICountryRepository
     {
-        private List<Country> _data = new List<Country>();
 
-        public CountryRepository()
+        private readonly MoviesDataContext _context;
+
+        public CountryRepository(MoviesDataContext context)
         {
-            _data.Add(new Country()
-            {
-                Id = 1,
-                Name = "Serbia",
-                Code = "RS"
-            });
-            _data.Add(new Country()
-            {
-                Id = 2,
-                Name = "United States of America",
-                Code = "US"
-            });
-            _data.Add(new Country()
-            {
-
-                Id = 3,
-                Name = "People's Republic of China",
-                Code = "PRC"
-            });
-            _data.Add(new Country()
-            {
-
-                Id = 4,
-                Name = "Republic of Italy",
-                Code = "IT"
-            });
+            _context = context?? throw new ArgumentNullException(nameof(context));
         }
 
         public async Task<List<Country>> GetAll()
         {
-            return await Task.FromResult(_data);
+            return await  _context.Countries.ToListAsync();
         }
     }
 }
