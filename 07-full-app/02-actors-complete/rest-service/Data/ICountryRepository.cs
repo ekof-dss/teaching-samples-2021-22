@@ -9,5 +9,12 @@ namespace project.Data
     {
         public Task<List<Country>> GetAll();
 
+        public Task<Country> GetById(int id);
+
+        public Task<int> Create(Country country);
+
+        public Task<int> Update(Country country);
+
+        public Task<int> Delete(int id);
     }
 }
