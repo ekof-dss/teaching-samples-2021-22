@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using project.Models;
+using project.ViewModels;
 
 namespace project.Data
 {
     public interface ICountryRepository
     {
-        public Task<List<Country>> GetAll();
+        public Task<IEnumerable<CountryDTO>> GetAll();
 
-        public Task<Country> GetById(int id);
+        public Task<CountryDTO> GetById(int id);
 
-        public Task<int> Create(Country country);
+        public Task<int> Create(CountryDTO country);
 
-        public Task<int> Update(Country country);
+        public Task<int> Update(CountryDTO country);
 
         public Task<int> Delete(int id);
     }

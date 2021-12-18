@@ -8,7 +8,8 @@ namespace project.Models
         public long Id { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public Country Country { get; set; }
+        public long CountryId { get; set; }
+        public virtual Country Country { get; set; }
         public DateTime? DateOfBirth { get; set; }
     }
 }

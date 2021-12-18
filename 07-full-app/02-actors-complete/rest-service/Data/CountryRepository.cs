@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 using project.Models;
+using project.ViewModels;
 
 namespace project.Data
 {
@@ -18,24 +19,43 @@ namespace project.Data
             _context = context?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<List<Country>> GetAll()
+        public async Task<IEnumerable<CountryDTO>> GetAll()
         {
-            return await  _context.Countries.ToListAsync();
+            return await _context.Countries
+                    .Select(x => new CountryDTO()
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        Code = x.Code
+                    }).ToListAsync();
         }
 
-        public async Task<Country> GetById(int id)
+        public async Task<CountryDTO> GetById(int id)
         {
-            return await _context.Countries.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await _context.Countries
+                .Where(x => x.Id == id)
+                .Select(x => new CountryDTO()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Code = x.Code
+                })
+                .FirstOrDefaultAsync();
         }
 
-        public async Task<int> Create(Country country)
+        public async Task<int> Create(CountryDTO countryDTO)
         {
-            _context.Countries.Add(country);  
+            Country newCountry = new Country()
+            {
+                Name = countryDTO.Name,
+                Code = countryDTO.Code
+            };
+            _context.Countries.Add(newCountry);  
             int ret = await _context.SaveChangesAsync();
             return ret;  
         }
 
-        public async Task<int> Update(Country country)
+        public async Task<int> Update(CountryDTO country)
         {
             Country countryToUpdate = await _context.Countries
                 .Where(x => x.Id == country.Id).FirstOrDefaultAsync();

@@ -9,13 +9,13 @@ namespace project.Data
 {
     public interface IActorRepository
     {
-        public Task<List<Actor>> GetAll();
+        public Task<IEnumerable<ActorDTO>> GetAll();
 
-        public Task<Actor> GetById(int id);
+        public Task<ActorDTO> GetById(int id);
 
-        public Task<int> Create(ActorCreateDTO actor);
+        public Task<int> Create(ActorDTO actor);
 
-        public Task<int> Update(ActorUpdateDTO actor);
+        public Task<int> Update(ActorDTO actor);
 
         public Task<int> Delete(int id);
 

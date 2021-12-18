@@ -19,46 +19,69 @@ namespace project.Data
             _context = context?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<List<Actor>> GetAll()
+        public async Task<IEnumerable<ActorDTO>> GetAll()
         {
-            return await _context.Actors.Include(x => x.Country).ToListAsync();
+            return await _context.Actors
+                    .Include(x => x.Country)
+                    .Select(x => new ActorDTO()
+                    {
+                        Id = x.Id,
+                        LastName = x.LastName,
+                        FirstName = x.FirstName,
+                        CountryId = x.Country.Id, 
+                        CountryName = x.Country.Name,
+                        CountryCode = x.Country.Code,
+                        DateOfBirth = x.DateOfBirth
+                    }).ToListAsync();      
         }
 
-        public async Task<Actor> GetById(int id)
+        public async Task<ActorDTO> GetById(int id)
         {
-            return await _context.Actors.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await _context.Actors
+                    .Where(x => x.Id == id)
+                    .Include(x => x.Country)
+                    .Select(x => new ActorDTO()
+                    {
+                        Id = x.Id,
+                        LastName = x.LastName,
+                        FirstName = x.FirstName,
+                        CountryId = x.Country.Id, 
+                        CountryName = x.Country.Name,
+                        CountryCode = x.Country.Code,
+                        DateOfBirth = x.DateOfBirth
+                    })
+                    .FirstOrDefaultAsync();
         }
 
-        public async Task<int> Create(ActorCreateDTO actor)
-        {
+        public async Task<int> Create(ActorDTO actorDTO)
+        { 
             Actor newActor = new Actor()
             {
-                FirstName = actor.FirstName,
-                LastName = actor.LastName,
-                DateOfBirth = actor.DateOfBirth,
-                Country = new Country()
-                {
-                    Id = actor.CountryId,
-                    Name = actor.CountryName,
-                    Code = actor.CountryCode
-                }
+                FirstName = actorDTO.FirstName,
+                LastName = actorDTO.LastName,
+                CountryId = actorDTO.CountryId,
+                DateOfBirth = actorDTO.DateOfBirth
             };
             _context.Actors.Add(newActor);  
             int ret = await _context.SaveChangesAsync();
             return ret;  
         }
 
-        public async Task<int> Update(ActorUpdateDTO actorDTO)
+        public async Task<int> Update(ActorDTO actorDTO)
         {
             Actor actorToUpdate = await _context.Actors
-                .Where(x => x.Id == actorDTO.Id).FirstOrDefaultAsync();
+                .Where(x => x.Id == actorDTO.Id)
+                .Include(x => x.Country)
+                .FirstOrDefaultAsync();
             actorToUpdate.FirstName = actorDTO.FirstName;
             actorToUpdate.LastName = actorDTO.LastName;
+            actorToUpdate.CountryId = actorDTO.CountryId;
             actorToUpdate.DateOfBirth = actorDTO.DateOfBirth;
             _context.Entry(actorToUpdate).State = EntityState.Modified;  
             int ret = await _context.SaveChangesAsync();
             return ret;  
         }
+
         public async Task<int> Delete(int id)
         {
             Actor actorToDelete = await _context.Actors
