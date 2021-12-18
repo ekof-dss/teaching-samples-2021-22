@@ -1,6 +1,7 @@
 @page "/actors"
 
 @inject IActorService _actorService
+@inject ICountryService _countryService
 @inject IMessagingService _messagingService
 @inject NavigationManager _navigationManager
 
@@ -19,9 +20,12 @@ else
         <label>Last name:
             <input @bind="LastName" />
         </label>
-        <label>Country:
-            <input @bind="Country" />
-        </label>
+        <select @onchange="ConutryChanged"> 
+            @foreach (var c in _countries)
+            {
+                <option value=@c.Id>@c.Code - @c.Name</option>
+            }
+        </select>
         <button @onclick="Add"> Add</button>
     </div>
 
@@ -43,6 +47,10 @@ else
 @code
 {
     private List<Actor> _actors;
+    private List<Country> _countries;
+
+    private long _selectedCountryId;
+
 
     private string FirstName { get; set; } = "";
     private string LastName { get; set; } = "";
@@ -51,6 +59,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         _actors = await _actorService.GetActors(reload: true);
+        _countries = await _countryService.GetCountries();
     }
 
     private async Task OnSelect(Actor actor)
@@ -72,6 +81,12 @@ else
         _actors = await _actorService.Delete(actor);
         await _messagingService.Add("Actor deleted: " + actor.FirstName + " "
         + actor.LastName);
+    }
+
+    private async Task ConutryChanged(ChangeEventArgs e)
+    {
+        _selectedCountryId = long.Parse( e.Value.ToString() );
+        await _messagingService.Add("Country Id selected: " + e.Value.ToString());
     }
 
 }

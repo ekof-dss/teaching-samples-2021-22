@@ -19,7 +19,7 @@ namespace project.Data
             _context = context?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<IEnumerable<CountryDTO>> GetAll()
+        public async Task<List<CountryDTO>> GetAll()
         {
             return await _context.Countries
                     .Select(x => new CountryDTO()

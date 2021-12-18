@@ -9,7 +9,7 @@ namespace project.Data
 {
     public interface IActorRepository
     {
-        public Task<IEnumerable<ActorDTO>> GetAll();
+        public Task<List<ActorDTO>> GetAll();
 
         public Task<ActorDTO> GetById(int id);
 

@@ -26,9 +26,9 @@ namespace project.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ActorDTO>> GetAll()
+        public async Task<List<ActorDTO>> GetAll()
         {
-            IEnumerable<ActorDTO> actors = await _actorRepo.GetAll();
+            List<ActorDTO> actors = await _actorRepo.GetAll();
             return actors;
         }
 

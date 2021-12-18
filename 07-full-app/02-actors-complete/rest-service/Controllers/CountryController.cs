@@ -26,9 +26,9 @@ namespace project.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<CountryDTO>> GetAll()
+        public async Task<List<CountryDTO>> GetAll()
         {
-            IEnumerable<CountryDTO> countries = await _countryRepo.GetAll();
+            List<CountryDTO> countries = await _countryRepo.GetAll();
             return countries;
         }
 

@@ -9,7 +9,7 @@ namespace project.Data
 {
     public interface ICountryRepository
     {
-        public Task<IEnumerable<CountryDTO>> GetAll();
+        public Task<List<CountryDTO>> GetAll();
 
         public Task<CountryDTO> GetById(int id);
 

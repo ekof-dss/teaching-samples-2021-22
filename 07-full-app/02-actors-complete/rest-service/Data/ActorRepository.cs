@@ -19,7 +19,7 @@ namespace project.Data
             _context = context?? throw new ArgumentNullException(nameof(context));
         }
 
-        public async Task<IEnumerable<ActorDTO>> GetAll()
+        public async Task<List<ActorDTO>> GetAll()
         {
             return await _context.Actors
                     .Include(x => x.Country)
@@ -57,6 +57,7 @@ namespace project.Data
         { 
             Actor newActor = new Actor()
             {
+                Id = actorDTO.Id,
                 FirstName = actorDTO.FirstName,
                 LastName = actorDTO.LastName,
                 CountryId = actorDTO.CountryId,
