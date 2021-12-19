@@ -55,7 +55,7 @@ namespace project.Data
                     .HasColumnName("BirthDate");
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.Actors)
-                    .HasForeignKey(d => d.Id)
+                    .HasForeignKey(d => d.CountryId)
                     .OnDelete(DeleteBehavior.Restrict)
                     .HasConstraintName("FK_Actor_Country");
             });

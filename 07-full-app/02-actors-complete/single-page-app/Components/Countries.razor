@@ -1,0 +1,79 @@
+@page "/countries"
+
+@inject ICountryService _countryService
+@inject IMessagingService _messagingService
+
+@if (_countries == null)
+{
+    <p><em>Loading countires...</em></p>
+}
+else
+{
+    <h2>All countries</h2>
+
+    <div>
+        <label>Country code:
+            <input @bind="CountryCode" />
+        </label>
+        <label>Country name:
+            <input @bind="CountryName" />
+        </label>
+        <button @onclick="Add"> Add</button>
+    </div>
+
+    <ul class="heroes">
+        @foreach (var c in _countries)
+        {
+            <li>
+                <span @onclick="@(()=>OnSelect(c))">
+                    <span class="badge">@c.Id</span> @c.Code &nbsp; @c.Name
+                </span>
+                <button class="delete" @onclick="@(()=>Delete(c))">x</button>
+            </li>
+        }
+    </ul>
+}
+@* <CountryDetail SelectedCountry=@selectedCountry></CountryDetail> *@
+
+@code
+{
+    private List<Country> _countries;
+    private long _selectedCountryId;
+
+    private string CountryCode { get; set; } = "";
+    private string CountryName { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _countries = await _countryService.GetCountries();
+    }
+
+    private async Task OnSelect(Country country)
+    {
+        await _messagingService.Add("Country selected: " + country.Code + " "
+        + country.Name);
+    }
+
+    private async Task Add()
+    {
+        await _countryService.Add(CountryCode, CountryName);
+        _countries = await _countryService.GetCountries();
+        await _messagingService.Add("Country added: " + CountryCode + " "
+        + CountryName);
+    }
+
+    private async Task Delete(Country country)
+    {
+        await _countryService.Delete(country);
+        _countries = await _countryService.GetCountries();
+        await _messagingService.Add("Country deleted: " + CountryCode + " "
+        + CountryName);
+    }
+
+    private async Task ConutryChanged(ChangeEventArgs e)
+    {
+        _selectedCountryId = long.Parse(e.Value.ToString());
+        await _messagingService.Add("Country Id selected: " + e.Value.ToString());
+    }
+
+}

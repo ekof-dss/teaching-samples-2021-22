@@ -20,7 +20,7 @@ else
         <label>Last name:
             <input @bind="LastName" />
         </label>
-        <select @onchange="ConutryChanged"> 
+        <select @onchange="ConutryChanged">
             @foreach (var c in _countries)
             {
                 <option value=@c.Id>@c.Code - @c.Name</option>
@@ -58,35 +58,38 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _actors = await _actorService.GetActors(reload: true);
         _countries = await _countryService.GetCountries();
+        _actors = await _actorService.GetActors();
     }
 
     private async Task OnSelect(Actor actor)
     {
-        await _messagingService.Add("Actor selected: " + actor.FirstName + " "
+        await _messagingService.Add("ActorComponent::Actor selected: " + actor.FirstName + " "
         + actor.LastName);
         _navigationManager.NavigateTo("/actordetail/" + actor.Id);
     }
 
     private async Task Add()
     {
-        _actors = await _actorService.Add(FirstName, LastName, Country);
-        await _messagingService.Add("Actor added: " + FirstName + " "
-        + LastName);
+        await _actorService.Add(FirstName, LastName, _selectedCountryId);
+        _actors = await _actorService.GetActors();
+        await _messagingService.Add("ActorComponent::Actor added: "
+            + FirstName + " " + LastName);
     }
 
     private async Task Delete(Actor actor)
     {
-        _actors = await _actorService.Delete(actor);
-        await _messagingService.Add("Actor deleted: " + actor.FirstName + " "
-        + actor.LastName);
+        await _actorService.Delete(actor);
+        _actors = await _actorService.GetActors();
+        await _messagingService.Add("ActorComponent::Actor deleted: "
+        + actor.FirstName + " " + LastName);
     }
 
     private async Task ConutryChanged(ChangeEventArgs e)
     {
-        _selectedCountryId = long.Parse( e.Value.ToString() );
-        await _messagingService.Add("Country Id selected: " + e.Value.ToString());
+        _selectedCountryId = long.Parse(e.Value.ToString());
+        await _messagingService.Add("ActorComponent::Country selected: "
+        + e.Value.ToString());
     }
 
 }

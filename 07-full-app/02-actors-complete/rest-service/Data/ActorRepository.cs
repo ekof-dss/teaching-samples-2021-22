@@ -57,7 +57,6 @@ namespace project.Data
         { 
             Actor newActor = new Actor()
             {
-                Id = actorDTO.Id,
                 FirstName = actorDTO.FirstName,
                 LastName = actorDTO.LastName,
                 CountryId = actorDTO.CountryId,

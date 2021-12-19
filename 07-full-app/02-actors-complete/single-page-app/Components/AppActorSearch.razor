@@ -31,13 +31,13 @@
         }
         set{
             search = value;
-            filteredActors =  Search(value);
+            filteredActors =  Search(value).GetAwaiter().GetResult();
         }
     }
     
-    private List<Actor> Search(string text)
+    private async Task<List<Actor>> Search(string text)
     {
-        return _actorService.Search(searchBox, searchBox, searchBox);
+        return await _actorService.Search(searchBox, searchBox, searchBox);
     }
     private async Task OnSelect(Actor a){
         await _messagingService.Add("Actor selected " + a.FirstName + " " 

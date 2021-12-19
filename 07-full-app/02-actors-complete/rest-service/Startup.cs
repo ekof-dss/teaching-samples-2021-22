@@ -31,8 +31,7 @@ namespace project
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddJsonOptions(x =>
-                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+            services.AddControllers();
             services.AddCors();
             services.AddSwaggerGen(c =>
             {

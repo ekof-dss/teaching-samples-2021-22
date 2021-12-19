@@ -8,6 +8,12 @@ namespace project.Services
 {
     public interface ICountryService
     {
-        Task<List<Country>> GetCountries(bool reload = false);
+        Task<List<Country>> GetCountries();
+
+        Task<int> Add(string countyCode, string counntryName);
+
+        Task<int> Delete(Country actor);
+
+        Task<int> Update(Country actor);
     }
 }
