@@ -5,7 +5,7 @@
 
 @if (@SelectedActor != null)
 {
-    @if (@currentMode == @Mode.View)
+    @if (@_currentMode == @Mode.View)
     {
         <h2>Details for @SelectedActor.FirstName @SelectedActor.LastName.ToUpper()</h2>
         <br />
@@ -16,7 +16,7 @@
         <div><span>date of birth: </span> @SelectedActor.DateOfBith?.ToString("MM/dd/yyyy")</div>
         <button class="clear" @onclick="Edit"> Edit</button>
     }
-    @if (@currentMode == @Mode.Edit)
+    @if (@_currentMode == @Mode.Edit)
     {
         <h2>Edit data for @SelectedActor.FirstName @SelectedActor.LastName.ToUpper()</h2>
         <div>
@@ -33,7 +33,7 @@
         </div>
         <div>
             <label> date of birth: </label>
-            <input @bind="SelectedActor.DateOfBith" placeholder="DateOfBith">
+            <input type="date" @bind="SelectedActor.DateOfBith" placeholder="DateOfBith">
         </div>
         <button class="clear" @onclick="Save"> Save</button>
     }
@@ -43,31 +43,31 @@
 {
     enum Mode { View, Edit };
 
-    Mode currentMode = Mode.View;
+    Mode _currentMode = Mode.View;
     public Actor SelectedActor { get; set; }
 
     [Parameter]
     public string Id { get; set; }
 
-    private List<Actor> actors;
+    private List<Actor> _actors;
     protected override async Task OnInitializedAsync()
     {
-        actors = await _actorService.GetActors();
-        SelectedActor = actors.First(x => x.Id == long.Parse(Id));
+        _actors = await _actorService.GetActors();
+        SelectedActor = _actors.First(x => x.Id == long.Parse(Id));
     }
 
     private async Task Edit()
     {
-        currentMode = Mode.Edit;
-        await _messagingService.Add("Actor edited: " + SelectedActor.FirstName + " "
+        _currentMode = Mode.Edit;
+        await _messagingService.Add("ActorDetail::Actor edited: " + SelectedActor.FirstName + " "
         + SelectedActor.LastName);
     }
 
     private async Task Save()
     {
-        currentMode = Mode.View;
+        _currentMode = Mode.View;
         await _actorService.Update(SelectedActor);
-        await _messagingService.Add("Actor saved: " + SelectedActor.FirstName + " "
+        await _messagingService.Add("ActorDetail::Actor saved: " + SelectedActor.FirstName + " "
         + SelectedActor.LastName);
     }
 }

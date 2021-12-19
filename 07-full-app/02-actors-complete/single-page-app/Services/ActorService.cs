@@ -71,7 +71,8 @@ namespace project.Services
                 Id = actor.Id,
                 FirstName = actor.FirstName,
                 LastName = actor.LastName,
-                CountryId = actor.CountryId
+                CountryId = actor.CountryId,
+                DateOfBith = actor.DateOfBith
             };
             var response = await _httpClient.PutAsJsonAsync<ActorUpdateDTO>(
                 _requestUri + "/" + actor.Id, actorUpd);

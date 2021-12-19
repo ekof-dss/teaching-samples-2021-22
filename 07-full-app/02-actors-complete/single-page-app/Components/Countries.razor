@@ -2,6 +2,7 @@
 
 @inject ICountryService _countryService
 @inject IMessagingService _messagingService
+@inject NavigationManager _navigationManager
 
 @if (_countries == null)
 {
@@ -33,12 +34,13 @@ else
         }
     </ul>
 }
-@* <CountryDetail SelectedCountry=@selectedCountry></CountryDetail> *@
+<CountryDetail></CountryDetail> 
 
 @code
 {
     private List<Country> _countries;
-    private long _selectedCountryId;
+    
+    private Country _selectedCountry;
 
     private string CountryCode { get; set; } = "";
     private string CountryName { get; set; } = "";
@@ -52,6 +54,7 @@ else
     {
         await _messagingService.Add("Country selected: " + country.Code + " "
         + country.Name);
+        _navigationManager.NavigateTo("countrydetail/" + country.Id);
     }
 
     private async Task Add()
@@ -72,7 +75,10 @@ else
 
     private async Task ConutryChanged(ChangeEventArgs e)
     {
-        _selectedCountryId = long.Parse(e.Value.ToString());
+        List<Country> countries = await _countryService.GetCountries();
+        _selectedCountry = countries
+            .Where(x => x.Id == long.Parse(e.Value.ToString()))
+            .FirstOrDefault();
         await _messagingService.Add("Country Id selected: " + e.Value.ToString());
     }
 

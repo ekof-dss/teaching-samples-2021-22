@@ -1,0 +1,65 @@
+@page "/countrydetail/{Id}"
+
+@inject ICountryService _countryService
+@inject IMessagingService _messagingService
+
+@if (@SelectedCountry != null)
+{
+    @if (@_currentMode == @Mode.View)
+    {
+        <h2>Details for @SelectedCountry.Name ( @SelectedCountry.Code.ToUpper() )</h2>
+        <br />
+        <div><span>id: </span>@SelectedCountry.Id</div>
+        <div><span>code: </span>@SelectedCountry.Code</div>
+        <div><span>name: </span>@SelectedCountry.Name</div>
+        <button class="clear" @onclick="Edit"> Edit</button>
+    }
+    @if (@_currentMode == @Mode.Edit)
+    {
+        <h2>Edit data for @SelectedCountry.Name ( @SelectedCountry.Code.ToUpper() )</h2>
+        <div>
+            <label> code: </label>
+            <input @bind="SelectedCountry.Code" placeholder="Code">
+        </div>
+        <div>
+            <label> name: </label>
+            <input @bind="SelectedCountry.Name" placeholder="Name">
+        </div>
+        <button class="clear" @onclick="Save"> Save</button>
+    }
+}
+
+@code
+{
+    enum Mode { View, Edit };
+
+    Mode _currentMode = Mode.View;
+
+    [Parameter]
+    public string Id { get; set; }
+
+
+    public Country SelectedCountry { get; set; }
+
+    private List<Country> _countries;
+    protected override async Task OnInitializedAsync()
+    {
+        _countries = await _countryService.GetCountries();
+        SelectedCountry = _countries.First(x => x.Id == long.Parse(Id));
+    }
+
+    private async Task Edit()
+    {
+        _currentMode = Mode.Edit;
+        await _messagingService.Add("CountryDetail::Country edited: " + SelectedCountry.Name + " ("
+        + SelectedCountry.Code + ")");
+    }
+
+    private async Task Save()
+    {
+        _currentMode = Mode.View;
+        await _countryService.Update(SelectedCountry);
+        await _messagingService.Add("CountryDetail::Country saved: " + SelectedCountry.Name + " ("
+        + SelectedCountry.Code + ")");
+    }
+}
