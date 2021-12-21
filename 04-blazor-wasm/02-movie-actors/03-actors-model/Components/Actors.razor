@@ -1,13 +1,13 @@
-<h2>Details for @actor.FirstName @actor.LastName.ToUpper()</h2>
-<div><span>id: </span>@actor.Id</div>
-<div><span>first name: </span>@actor.FirstName</div>
-<div><span>last name: </span>@actor.LastName</div>
-<div><span>country: </span>@actor.CountryCode</div>
-<div><span>date of birth: </span> @actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+<h2>Details for @_actor.FirstName @_actor.LastName.ToUpper()</h2>
+<div><span>id: </span>@_actor.Id</div>
+<div><span>first name: </span>@_actor.FirstName</div>
+<div><span>last name: </span>@_actor.LastName</div>
+<div><span>country: </span>@_actor.CountryCode</div>
+<div><span>date of birth: </span> @_actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
 
 @code 
 {
-    Actor actor = new Actor()
+    Actor _actor = new Actor()
             {
                 Id = 3,
                 FirstName = "Robert",

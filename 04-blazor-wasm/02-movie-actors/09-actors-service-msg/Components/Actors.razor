@@ -1,7 +1,7 @@
-@inject IActorService service 
-@inject IMessagingService messagingService
+@inject IActorService _actorService 
+@inject IMessagingService _messagingService
 
-@if (actors == null)
+@if (_actors == null)
 {
     <p><em>Loading actors...</em></p>
 }
@@ -9,33 +9,33 @@ else
 {
     <h2>My favorite actors</h2>
     <ul class="heroes">
-        @foreach (var a in actors)
+        @foreach (Actor a in _actors)
         {
             <li @onclick="@(()=>OnSelect(a))" 
-                class="@((a==selectedActor)?"selected":"")" >
+                class="@((a==_selectedActor)?"selected":"")" >
                 <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
                 - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
             </li>
         }
     </ul>
 }
-<ActorDetail SelectedActor=@selectedActor></ActorDetail>
+<ActorDetail SelectedActor=@_selectedActor></ActorDetail>
 
 @code
 {
-    Actor selectedActor = null;
+    Actor _selectedActor = null;
 
-    private List<Actor> actors;
+    private List<Actor> _actors;
 
     protected override async Task OnInitializedAsync()
     {
-        actors = await service.GetActors();
+        _actors = await _actorService.GetActors();
     }
 
     private async Task OnSelect(Actor actor)
     {
-        this.selectedActor = actor;
-        await messagingService.Add("Actor selected: " + actor.FirstName + " " 
+        _selectedActor = actor;
+        await _messagingService.Add("Actor selected: " + actor.FirstName + " " 
             + actor.LastName);
     }
 

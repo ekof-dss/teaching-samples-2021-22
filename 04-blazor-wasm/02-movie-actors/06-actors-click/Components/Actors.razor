@@ -1,6 +1,6 @@
-@inject HttpClient Http
+@inject HttpClient _httpClient
 
-@if (actors == null)
+@if (_actors == null)
 {
     <p><em>Loading actors...</em></p>
 }
@@ -8,10 +8,10 @@ else
 {
     <h2>My favorite actors</h2>
     <ul class="heroes">
-        @foreach (var a in actors)
+        @foreach (var a in _actors)
         {
             <li @onclick="@(()=>OnSelect(a))" 
-                class="@((a==selectedActor)?"selected":"")" >
+                class="@((a==_selectedActor)?"selected":"")" >
                 <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
                 - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
             </li>
@@ -19,48 +19,49 @@ else
     </ul>
 }
 
-@if (@selectedActor != null)
+@if (@_selectedActor != null)
 {
-    <h2>Details for @selectedActor.FirstName @selectedActor.LastName.ToUpper()</h2>
+    <h2>Details for @_selectedActor.FirstName @_selectedActor.LastName.ToUpper()</h2>
     <br />
-    <div><span>id: </span>@selectedActor.Id</div>
-    <div><span>first name: </span>@selectedActor.FirstName</div>
-    <div><span>last name: </span>@selectedActor.LastName</div>
-    <div><span>country: </span>@selectedActor.CountryCode</div>
-    <div><span>date of birth: </span> @selectedActor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+    <div><span>id: </span>@_selectedActor.Id</div>
+    <div><span>first name: </span>@_selectedActor.FirstName</div>
+    <div><span>last name: </span>@_selectedActor.LastName</div>
+    <div><span>country: </span>@_selectedActor.CountryCode</div>
+    <div><span>date of birth: </span> @_selectedActor.DateOfBith?.ToString("MM/dd/yyyy")</div>
     <br />
     <div>
         <label> first name: </label>
-        <input @bind="selectedActor.FirstName" placeholder="FirstName">
+        <input @bind="_selectedActor.FirstName" placeholder="FirstName">
     </div>
     <div>
         <label> last name: </label>
-        <input @bind="selectedActor.LastName" placeholder="LastName">
+        <input @bind="_selectedActor.LastName" placeholder="LastName">
     </div>
     <div>
         <label> country: </label>
-        <input @bind="selectedActor.CountryCode" placeholder="CountryCode">
+        <input @bind="_selectedActor.CountryCode" placeholder="CountryCode">
     </div>
     <div>
         <label> date of birth: </label>
-        <input @bind="selectedActor.DateOfBith" placeholder="DateOfBith">
+        <input @bind="_selectedActor.DateOfBith" placeholder="DateOfBith">
     </div>
 }
 
 @code
 {
-    Actor selectedActor = null;
+    Actor _selectedActor = null;
 
-    private Actor[] actors;
+    private Actor[] _actors;
 
     protected override async Task OnInitializedAsync()
     {
-        actors = await Http.GetFromJsonAsync<Actor[]>("sample-data/actors.json");
+        _actors = await _httpClient.GetFromJsonAsync<Actor[]>(
+            "sample-data/actors.json");
     }
 
     private void OnSelect(Actor actor)
     {
-        this.selectedActor = actor;
+        _selectedActor = actor;
     }
 
 }

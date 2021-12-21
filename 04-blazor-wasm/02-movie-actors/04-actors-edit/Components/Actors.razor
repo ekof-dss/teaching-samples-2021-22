@@ -1,30 +1,30 @@
-<h2>Details for @actor.FirstName @actor.LastName.ToUpper()</h2>
+<h2>Details for @_actor.FirstName @_actor.LastName.ToUpper()</h2>
 <br/>
-<div><span>id: </span>@actor.Id</div>
-<div><span>first name: </span>@actor.FirstName</div>
-<div><span>last name: </span>@actor.LastName</div>
-<div><span>country: </span>@actor.CountryCode</div>
-<div><span>date of birth: </span> @actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
+<div><span>id: </span>@_actor.Id</div>
+<div><span>first name: </span>@_actor.FirstName</div>
+<div><span>last name: </span>@_actor.LastName</div>
+<div><span>country: </span>@_actor.CountryCode</div>
+<div><span>date of birth: </span> @_actor.DateOfBith?.ToString("MM/dd/yyyy")</div>
 <br/>
 <div>
     <label> first name: </label>
-    <input @bind="actor.FirstName" placeholder="FirstName">
+    <input @bind="_actor.FirstName" placeholder="FirstName">
 </div>
 <div>
     <label> last name: </label>
-    <input @bind="actor.LastName" placeholder="LastName">
+    <input @bind="_actor.LastName" placeholder="LastName">
 </div>
 <div>
     <label> country: </label>
-    <input @bind="actor.CountryCode" placeholder="CountryCode">
+    <input @bind="_actor.CountryCode" placeholder="CountryCode">
 </div>
 <div>
     <label> date of birth: </label>
-    <input @bind="actor.DateOfBith" placeholder="DateOfBith">
+    <input @bind="_actor.DateOfBith" placeholder="DateOfBith">
 </div>
 @code
 {
-    Actor actor = new Actor()
+    Actor _actor = new Actor()
     {
         Id = 3,
         FirstName = "Robert",

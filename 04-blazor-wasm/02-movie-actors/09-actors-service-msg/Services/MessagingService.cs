@@ -14,6 +14,7 @@ namespace project.Services
         {
             Messages = new List<string>();
         }
+        
         public event EventHandler<List<string>> OnMessagesChanged; 
 
         public async Task Add(string message){

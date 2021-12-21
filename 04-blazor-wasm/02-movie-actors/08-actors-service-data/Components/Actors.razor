@@ -1,6 +1,6 @@
-@inject IActorService service 
+@inject IActorService _actorService 
 
-@if (actors == null)
+@if (_actors == null)
 {
     <p><em>Loading actors...</em></p>
 }
@@ -8,32 +8,32 @@ else
 {
     <h2>My favorite actors</h2>
     <ul class="heroes">
-        @foreach (var a in actors)
+        @foreach (Actor a in _actors)
         {
             <li @onclick="@(()=>OnSelect(a))" 
-                class="@((a==selectedActor)?"selected":"")" >
+                class="@((a==_selectedActor)?"selected":"")" >
                 <span class="badge">@a.Id</span> @a.FirstName &nbsp; @a.LastName
                 - @a.DateOfBith?.ToShortDateString() ( @a.CountryCode )
             </li>
         }
     </ul>
 }
-<ActorDetail SelectedActor=@selectedActor></ActorDetail>
+<ActorDetail SelectedActor=@_selectedActor></ActorDetail>
 
 @code
 {
-    Actor selectedActor = null;
+    Actor _selectedActor = null;
 
-    private List<Actor> actors;
+    private List<Actor> _actors;
 
     protected override async Task OnInitializedAsync()
     {
-        actors = await service.GetActors();
+        _actors = await _actorService.GetActors();
     }
 
     private void OnSelect(Actor actor)
     {
-        this.selectedActor = actor;
+        this._selectedActor = actor;
     }
 
 }
