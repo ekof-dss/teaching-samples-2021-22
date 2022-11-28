@@ -6019,3 +6019,11 @@ project/07-for/obj/Debug/net5.0/ref/07-for.dll
 .vs/teaching-samples/FileContentIndex/eecacef8-8617-418b-9ca3-1e5496352310.vsidx
 .vs/ProjectEvaluation/teaching-samples.projects.v5.1
 .vs/ProjectEvaluation/teaching-samples.metadata.v5.1
+/00-template/BlazorApp1/.vs/BlazorApp1
+/00-template/BlazorApp1/Client/obj
+/00-template/BlazorApp1/Client/bin/Debug/net6.0
+/00-template/BlazorApp1/Server/obj
+/00-template/BlazorApp1/Shared/obj
+/00-template/BlazorApp1/Shared/bin/Debug/net6.0
+/04-blazor-wasm/01-fundametals/01-wasm-hello/.vs
+/04-blazor-wasm/01-fundametals/01-wasm-hello/bin/Debug/net6.0
